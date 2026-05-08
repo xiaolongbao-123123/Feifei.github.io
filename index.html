@@ -10,9 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#121212',
-                        cream: '#F5F1EC',
-                        accent: '#A82C2C'
+                        // 全新国风高级配色（老外审美+中式含蓄）
+                        dark: '#1D2927',
+                        porcelain: '#F4F7F5',
+                        rice: '#FAF7F2',
+                        accent: '#9E2B25'
                     },
                     fontFamily: {
                         inter: ['system-ui', 'sans-serif'],
@@ -21,10 +23,9 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
+    <style type="text/tailwindcss"& @layer utilities {
             .text-shadow {
-                text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+                text-shadow: 0 2px 8px rgba(0,0,0,0.15);
             }
             .card-hover {
                 transition: 0.35s ease all;
@@ -35,7 +36,8 @@
         }
     </style>
 </head>
-<body class="font-inter bg-dark text-white antialiased">
+<body class="font-inter bg-porcelain text-dark antialiased">
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-wide text-white">Persona<span class="text-accent">China</span></a>
@@ -48,18 +50,22 @@
             <a href="#quiz" class="px-5 py-2 bg-accent rounded-full text-sm font-medium hover:bg-accent/90 transition">Take Quiz</a>
         </div>
     </nav>
-    <section class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-porcelain">
         <div class="max-w-4xl mx-auto text-center">
-            <p class="text-cream/70 tracking-widest text-sm mb-4">PERSONALIZED CHINA TRAVEL</p>
+            <p class="text-dark/60 tracking-widest text-sm mb-4">PERSONALIZED CHINA TRAVEL</p>
             <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-tight mb-6 text-shadow">Travel China<br/><span class="text-accent">As Who You Are</span></h1>
-            <p class="text-white/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">We match your unique personality, lifestyle and budget to your perfect Chinese cities. No generic tours, no crowded routes — only travel made for you.</p>
+            <p class="text-dark/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">We match your unique personality, lifestyle and budget to your perfect Chinese cities. No generic tours, no crowded routes — only travel made for you.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#quiz" class="px-8 py-3 bg-accent rounded-full font-medium card-hover">Start Your Personality Quiz</a>
-                <a href="#pricing" class="px-8 py-3 border border-white/20 rounded-full font-medium hover:bg-white/10 card-hover">View Pricing</a>
+                <a href="#quiz" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Your Personality Quiz</a>
+                <a href="#pricing" class="px-8 py-3 border border-dark/20 rounded-full font-medium hover:bg-dark/5 card-hover">View Pricing</a>
             </div>
         </div>
     </section>
-    <section id="how" class="bg-cream text-dark px-6 py-24">
+
+    <!-- How It Works -->
+    <section id="how" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-accent font-medium text-sm tracking-wider mb-2">YOUR JOURNEY</p>
@@ -79,12 +85,14 @@
                 <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                     <span class="text-accent text-2xl font-bold">03</span>
                     <h3 class="text-xl font-semibold mt-4 mb-3">Custom Plan</h3>
-                    <p class="text-dark/60 text-sm leading-relaxed">Receive your private travel guide: food, transport, cost, local habits, avoid scams &amp; hidden tips.</p>
+                    <p class="text-dark/60 text-sm leading-relaxed">Receive your private travel guide: food, transport, cost, local habits, avoid scams & hidden tips.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="pricing" class="bg-dark px-6 py-24">
+
+    <!-- Pricing -->
+    <section id="pricing" class="bg-dark text-white px-6 py-24">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-accent font-medium text-sm tracking-wider mb-2">SIMPLE PRICING</p>
@@ -117,7 +125,7 @@
                     <ul class="space-y-3 text-white/70 text-sm">
                         <li>✓ All Basic Plan benefits</li>
                         <li>✓ Complete living guide (payment, taxi, scan code)</li>
-                        <li>✓ Avoid tourist scams &amp; hidden traps</li>
+                        <li>✓ Avoid tourist scams & hidden traps</li>
                         <li>✓ Local daily life etiquette</li>
                         <li>✓ 24h Email support</li>
                     </ul>
@@ -125,7 +133,9 @@
             </div>
         </div>
     </section>
-    <section id="cities" class="bg-cream text-dark px-6 py-24">
+
+    <!-- City Preview -->
+    <section id="cities" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-accent font-medium text-sm tracking-wider mb-2">CITY DATABASE</p>
@@ -133,25 +143,29 @@
                 <p class="text-dark/60 max-w-xl mx-auto">Each city has unique energy. We match your persona to the right place.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern &amp; Busy</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Food &amp; Slow Life</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet &amp; Healing</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mystic &amp; Mountainous</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Elegant &amp; Gentle</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal &amp; Fresh</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy &amp; Youthful</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical &amp; Artistic</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern & Busy</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Food & Slow Life</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet & Healing</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mystic & Mountainous</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Elegant & Gentle</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal & Fresh</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy & Youthful</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical & Artistic</p></div>
             </div>
         </div>
     </section>
-    <section id="quiz" class="bg-dark px-6 py-32">
+
+    <!-- Quiz CTA -->
+    <section id="quiz" class="bg-porcelain px-6 py-32">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">Discover Your China City</h2>
-            <p class="text-white/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city was made for your soul.</p>
-            <a href="#support" class="px-10 py-4 bg-accent rounded-full font-semibold text-lg card-hover">Start Free Quiz</a>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your China City</h2>
+            <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city was made for your soul.</p>
+            <a href="#support" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</a>
         </div>
     </section>
-    <section id="support" class="bg-cream text-dark px-6 py-24">
+
+    <!-- Support -->
+    <section id="support" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">CONTACT US</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Personal Help?</h2>
@@ -159,12 +173,16 @@
             <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support Available</div>
         </div>
     </section>
-    <footer class="bg-black py-10 px-6">
+
+    <!-- Footer -->
+    <footer class="bg-dark py-10 px-6">
         <div class="max-w-6xl mx-auto text-center text-white/40 text-sm">
             <p>© 2025 PersonaChina. All rights reserved.</p>
             <p class="mt-2">Travel China As Who You Are</p>
         </div>
     </footer>
+
+    <!-- Tidio Live Chat -->
     <script src="//code.tidio.co/0kbtpkkwqkbwawvx9z0kqfvdse5zz98s.js" async></script>
 </body>
 </html>
