@@ -10,7 +10,6 @@
             theme: {
                 extend: {
                     colors: {
-                        // 全新国风高级配色（老外审美+中式含蓄）
                         dark: '#1D2927',
                         porcelain: '#F4F7F5',
                         rice: '#FAF7F2',
@@ -23,7 +22,8 @@
             }
         }
     </script>
-    <style type="text/tailwindcss"& @layer utilities {
+    <style type="text/tailwindcss">
+        @layer utilities {
             .text-shadow {
                 text-shadow: 0 2px 8px rgba(0,0,0,0.15);
             }
@@ -37,6 +37,7 @@
     </style>
 </head>
 <body class="font-inter bg-porcelain text-dark antialiased">
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -54,9 +55,12 @@
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-porcelain">
         <div class="max-w-4xl mx-auto text-center">
-            <p class="text-dark/60 tracking-widest text-sm mb-4">PERSONALIZED CHINA TRAVEL</p>
+            <p class="text-dark/60 tracking-widest text-sm mb-4">SOULFUL CHINA TRAVEL</p>
             <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-tight mb-6 text-shadow">Travel China<br/><span class="text-accent">As Who You Are</span></h1>
-            <p class="text-dark/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">We match your unique personality, lifestyle and budget to your perfect Chinese cities. No generic tours, no crowded routes — only travel made for you.</p>
+            <p class="text-dark/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">
+                Discover China’s poetic landscapes, ancient rhythms, and hidden charms — all matched to your unique spirit.
+                No crowded tours, only authentic, peaceful journeys designed for you.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#quiz" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Your Personality Quiz</a>
                 <a href="#pricing" class="px-8 py-3 border border-dark/20 rounded-full font-medium hover:bg-dark/5 card-hover">View Pricing</a>
@@ -68,24 +72,24 @@
     <section id="how" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-accent font-medium text-sm tracking-wider mb-2">YOUR JOURNEY</p>
+                <p class="text-accent font-medium text-sm tracking-wider mb-2">YOUR POETIC JOURNEY</p>
                 <h2 class="text-3xl md:text-4xl font-bold">How PersonaChina Works</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                     <span class="text-accent text-2xl font-bold">01</span>
                     <h3 class="text-xl font-semibold mt-4 mb-3">Persona Quiz</h3>
-                    <p class="text-dark/60 text-sm leading-relaxed">Answer simple personality questions. We analyze your travel style, social energy, budget preference and lifestyle habits.</p>
+                    <p class="text-dark/60 text-sm leading-relaxed">Answer gentle questions about your spirit, rhythm, and style. We understand what makes you feel at peace in China.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                     <span class="text-accent text-2xl font-bold">02</span>
                     <h3 class="text-xl font-semibold mt-4 mb-3">City Matching</h3>
-                    <p class="text-dark/60 text-sm leading-relaxed">Every city in China has its own vibe. We match you with cities that truly fit your personality.</p>
+                    <p class="text-dark/60 text-sm leading-relaxed">Every Chinese city carries a unique energy — mountains, water, tea, poetry, and calm. We match you to your spiritual home.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                     <span class="text-accent text-2xl font-bold">03</span>
-                    <h3 class="text-xl font-semibold mt-4 mb-3">Custom Plan</h3>
-                    <p class="text-dark/60 text-sm leading-relaxed">Receive your private travel guide: food, transport, cost, local habits, avoid scams & hidden tips.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-3">Poetic Travel Plan</h3>
+                    <p class="text-dark/60 text-sm leading-relaxed">Receive a curated guide: tea culture, local life, ancient streets, peaceful views, and heartfelt experiences only locals know.</p>
                 </div>
             </div>
         </div>
@@ -97,36 +101,36 @@
             <div class="text-center mb-16">
                 <p class="text-accent font-medium text-sm tracking-wider mb-2">SIMPLE PRICING</p>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Choose Your Plan</h2>
-                <p class="text-white/60 max-w-xl mx-auto">Lightweight, one-time payment. No subscription, no hidden fees.</p>
+                <p class="text-white/60 max-w-xl mx-auto">One gentle payment. No subscriptions, no stress — just pure, authentic China travel.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="border border-white/10 rounded-2xl p-10 card-hover">
-                    <h3 class="text-xl font-semibold mb-2">Basic Plan</h3>
-                    <p class="text-white/50 text-sm mb-6">Perfect for short trips</p>
+                    <h3 class="text-xl font-semibold mb-2">Serene Plan</h3>
+                    <p class="text-white/50 text-sm mb-6">For calm, short trips</p>
                     <div class="mb-6">
                         <span class="text-4xl font-bold">$4.99</span>
                         <span class="text-white/50 text-sm">one-time</span>
                     </div>
                     <ul class="space-y-3 text-white/70 text-sm">
                         <li>✓ Personality city matching report</li>
-                        <li>✓ 7-day simple travel route</li>
-                        <li>✓ Basic consumption budget guide</li>
-                        <li>✓ Top local food recommendations</li>
+                        <li>✓ 7-day gentle travel route</li>
+                        <li>✓ Basic local budget & culture tips</li>
+                        <li>✓ Authentic local food guide</li>
                     </ul>
                 </div>
                 <div class="border border-accent/40 bg-accent/5 rounded-2xl p-10 card-hover relative">
                     <span class="absolute top-4 right-6 text-xs bg-accent px-3 py-1 rounded-full">MOST POPULAR</span>
-                    <h3 class="text-xl font-semibold mb-2">Premium Plan</h3>
-                    <p class="text-white/50 text-sm mb-6">Best for first-time China visitors</p>
+                    <h3 class="text-xl font-semibold mb-2">Harmony Plan</h3>
+                    <p class="text-white/50 text-sm mb-6">Best for first-time China travelers</p>
                     <div class="mb-6">
                         <span class="text-4xl font-bold">$9.99</span>
                         <span class="text-white/50 text-sm">one-time</span>
                     </div>
                     <ul class="space-y-3 text-white/70 text-sm">
-                        <li>✓ All Basic Plan benefits</li>
-                        <li>✓ Complete living guide (payment, taxi, scan code)</li>
-                        <li>✓ Avoid tourist scams & hidden traps</li>
-                        <li>✓ Local daily life etiquette</li>
+                        <li>✓ All Serene Plan benefits</li>
+                        <li>✓ Full China living & etiquette guide</li>
+                        <li>✓ Avoid tourist traps & hidden scams</li>
+                        <li>✓ Tea culture & local daily wisdom</li>
                         <li>✓ 24h Email support</li>
                     </ul>
                 </div>
@@ -138,19 +142,19 @@
     <section id="cities" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-accent font-medium text-sm tracking-wider mb-2">CITY DATABASE</p>
+                <p class="text-accent font-medium text-sm tracking-wider mb-2">CITIES OF POETRY & CALM</p>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Cities We Cover</h2>
-                <p class="text-dark/60 max-w-xl mx-auto">Each city has unique energy. We match your persona to the right place.</p>
+                <p class="text-dark/60 max-w-xl mx-auto">Each city holds a unique soul — mountains, water, tea, art, and peace. We find the one that fits yours.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern & Busy</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Food & Slow Life</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet & Healing</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mystic & Mountainous</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Elegant & Gentle</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Elegant & Modern</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Tea & Slow Life</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Mountains & Peace</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mystic & Misty</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Lake & Poetry</p></div>
                 <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal & Fresh</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy & Youthful</p></div>
-                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical & Artistic</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy & Lively</p></div>
+                <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Gardens & Art</p></div>
             </div>
         </div>
     </section>
@@ -158,8 +162,8 @@
     <!-- Quiz CTA -->
     <section id="quiz" class="bg-porcelain px-6 py-32">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your China City</h2>
-            <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city was made for your soul.</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Find Your Soul City in China</h2>
+            <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute spirit quiz. Discover which Chinese city was made for your heart and soul.</p>
             <a href="#support" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</a>
         </div>
     </section>
@@ -168,9 +172,9 @@
     <section id="support" class="bg-rice text-dark px-6 py-24">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">CONTACT US</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Personal Help?</h2>
-            <p class="text-dark/60 mb-10">Talk with our support bot in the bottom right corner. Ask anything about China travel, cities, cost, customs and tips.</p>
-            <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support Available</div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Gentle Guidance?</h2>
+            <p class="text-dark/60 mb-10">Chat with our support bot anytime. Ask about travel, culture, tea, cities, costs, and peaceful local experiences.</p>
+            <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Support • Peaceful China Travel Help</div>
         </div>
     </section>
 
