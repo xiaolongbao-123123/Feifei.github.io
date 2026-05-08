@@ -42,7 +42,7 @@
             <a href="#cities" class="hover:text-white transition">Cities</a>
             <a href="#support" class="hover:text-white transition">Support</a>
         </div>
-        <button onclick="startQuiz()" class="px-5 py-2 bg-accent rounded-full text-sm font-medium text-white hover:bg-accent/90 transition">Take Quiz</button>
+        <button onclick="openQuiz()" class="px-5 py-2 bg-accent rounded-full text-sm font-medium text-white hover:bg-accent/90 transition">Take Quiz</button>
     </div>
 </nav>
 
@@ -53,7 +53,7 @@
         <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-tight mb-6 text-shadow">Travel China<br/><span class="text-accent">As Who You Are</span></h1>
         <p class="text-dark/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">We match your unique personality, lifestyle and budget to your perfect Chinese cities. No generic tours, no crowded routes — only travel made for you.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="startQuiz()" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Your Personality Quiz</button>
+            <button onclick="openQuiz()" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Your Personality Quiz</button>
             <a href="#pricing" class="px-8 py-3 border border-dark/20 rounded-full font-medium hover:bg-dark/5 card-hover">View Pricing</a>
         </div>
     </div>
@@ -70,95 +70,166 @@
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">01</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3">Persona Quiz</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Answer 10 simple personality questions. We analyze your travel style, energy, budget and habits.</p>
+                <p class="text-dark/60 text-sm leading-relaxed">Answer simple personality questions. We analyze your travel style, social energy, budget preference and lifestyle habits.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">02</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3">City Matching</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Every city has its own vibe. We match you with cities that truly fit your soul.</p>
+                <p class="text-dark/60 text-sm leading-relaxed">Every city in China has its own vibe. We match you with cities that truly fit your personality.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">03</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3">Custom Plan</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Receive your full private guide: food, transport, budget, scams & hidden tips.</p>
+                <p class="text-dark/60 text-sm leading-relaxed">Receive your private travel guide: food, transport, cost, local habits, avoid scams & hidden tips.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Pricing (三档价格) -->
+<!-- Pricing -->
 <section id="pricing" class="bg-dark text-white px-6 py-24">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">SIMPLE PRICING</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Choose Your Plan</h2>
-            <p class="text-white/60 max-w-xl mx-auto">One-time payment. No subscription. No hidden fees.</p>
+            <p class="text-white/60 max-w-xl mx-auto">Lightweight, one-time payment. No subscription, no hidden fees.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div class="border border-white/10 rounded-2xl p-8 card-hover">
-                <h3 class="text-xl font-semibold mb-2">Basic</h3>
-                <p class="text-white/50 text-sm mb-6">For quick trips</p>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="border border-white/10 rounded-2xl p-10 card-hover">
+                <h3 class="text-xl font-semibold mb-2">Basic Plan</h3>
+                <p class="text-white/50 text-sm mb-6">Perfect for short trips</p>
                 <div class="mb-6">
-                    <span class="text-4xl font-bold">$14.99</span>
+                    <span class="text-4xl font-bold">$4.99</span>
+                    <span class="text-white/50 text-sm">one-time</span>
                 </div>
-                <ul class="space-y-2 text-white/70 text-sm">
-                    <li>✓ City matching report</li>
-                    <li>✓ 7-day simple route</li>
-                    <li>✓ Basic budget guide</li>
+                <ul class="space-y-3 text-white/70 text-sm">
+                    <li>✓ Personality city matching report</li>
+                    <li>✓ 7-day simple travel route</li>
+                    <li>✓ Basic consumption budget guide</li>
+                    <li>✓ Top local food recommendations</li>
                 </ul>
-                <button onclick="openPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
+                <button onclick="openPay()" class="mt-6 w-full py-2 bg-accent rounded-full text-white font-medium">Buy Now</button>
             </div>
-            <div class="border border-accent/40 bg-accent/5 rounded-2xl p-8 card-hover relative">
+            <div class="border border-accent/40 bg-accent/5 rounded-2xl p-10 card-hover relative">
                 <span class="absolute top-4 right-6 text-xs bg-accent px-3 py-1 rounded-full">MOST POPULAR</span>
-                <h3 class="text-xl font-semibold mb-2">Standard</h3>
-                <p class="text-white/50 text-sm mb-6">Best for first-time visitors</p>
+                <h3 class="text-xl font-semibold mb-2">Premium Plan</h3>
+                <p class="text-white/50 text-sm mb-6">Best for first-time China visitors</p>
                 <div class="mb-6">
-                    <span class="text-4xl font-bold">$27.99</span>
+                    <span class="text-4xl font-bold">$9.99</span>
+                    <span class="text-white/50 text-sm">one-time</span>
                 </div>
-                <ul class="space-y-2 text-white/70 text-sm">
-                    <li>✓ All Basic features</li>
-                    <li>✓ Full living guide</li>
-                    <li>✓ Avoid scams & traps</li>
-                    <li>✓ Local etiquette</li>
-                    <li>✓ 24h email support</li>
+                <ul class="space-y-3 text-white/70 text-sm">
+                    <li>✓ All Basic Plan benefits</li>
+                    <li>✓ Complete living guide (payment, taxi, scan code)</li>
+                    <li>✓ Avoid tourist scams & hidden traps</li>
+                    <li>✓ Local daily life etiquette</li>
+                    <li>✓ 24h Email support</li>
                 </ul>
-                <button onclick="openPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
-            </div>
-            <div class="border border-white/10 rounded-2xl p-8 card-hover">
-                <h3 class="text-xl font-semibold mb-2">Premium</h3>
-                <p class="text-white/50 text-sm mb-6">For deep travel</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold">$42.99</span>
-                </div>
-                <ul class="space-y-2 text-white/70 text-sm">
-                    <li>✓ All Standard features</li>
-                    <li>✓ Custom 10-day itinerary</li>
-                    <li>✓ VIP local help</li>
-                    <li>✓ Hidden gems guide</li>
-                </ul>
-                <button onclick="openPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
+                <button onclick="openPay()" class="mt-6 w-full py-2 bg-accent rounded-full text-white font-medium">Buy Now</button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- City Preview -->
+<!-- City Preview (扩展到30个城市) -->
 <section id="cities" class="bg-rice text-dark px-6 py-24">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">CITY DATABASE</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Cities We Cover</h2>
-            <p class="text-dark/60 max-w-xl mx-auto">We match your personality to the perfect city.</p>
+            <p class="text-dark/60 max-w-xl mx-auto">Click any city to see its highlights, food and culture.</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Pandas & Food</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mountain</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Lake</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy</p></div>
-            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical</p></div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('shanghai')">
+                <p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('chengdu')">
+                <p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Pandas & Food</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('dali')">
+                <p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('chongqing')">
+                <p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mountain</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('hangzhou')">
+                <p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Lake</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('qingdao')">
+                <p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('changsha')">
+                <p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('suzhou')">
+                <p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('beijing')">
+                <p class="font-medium">Beijing</p><p class="text-xs text-dark/50">Historic</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('xian')">
+                <p class="font-medium">Xi’an</p><p class="text-xs text-dark/50">Ancient</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('sanya')">
+                <p class="font-medium">Sanya</p><p class="text-xs text-dark/50">Tropical</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('guangzhou')">
+                <p class="font-medium">Guangzhou</p><p class="text-xs text-dark/50">Cantonese</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('shenzhen')">
+                <p class="font-medium">Shenzhen</p><p class="text-xs text-dark/50">Tech</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('lijiang')">
+                <p class="font-medium">Lijiang</p><p class="text-xs text-dark/50">Old Town</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('zhangjiajie')">
+                <p class="font-medium">Zhangjiajie</p><p class="text-xs text-dark/50">Mountains</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('guilin')">
+                <p class="font-medium">Guilin</p><p class="text-xs text-dark/50">Scenery</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('nanjing')">
+                <p class="font-medium">Nanjing</p><p class="text-xs text-dark/50">Capital</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('wuhan')">
+                <p class="font-medium">Wuhan</p><p class="text-xs text-dark/50">Lakes</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('xiamen')">
+                <p class="font-medium">Xiamen</p><p class="text-xs text-dark/50">Island</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('kunming')">
+                <p class="font-medium">Kunming</p><p class="text-xs text-dark/50">Spring</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('harbin')">
+                <p class="font-medium">Harbin</p><p class="text-xs text-dark/50">Ice</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('tianjin')">
+                <p class="font-medium">Tianjin</p><p class="text-xs text-dark/50">Port</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('dalian')">
+                <p class="font-medium">Dalian</p><p class="text-xs text-dark/50">Coastal</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('huangshan')">
+                <p class="font-medium">Huangshan</p><p class="text-xs text-dark/50">Yellow Mt</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('jiuzhaigou')">
+                <p class="font-medium">Jiuzhaigou</p><p class="text-xs text-dark/50">Lakes</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('fuzhou')">
+                <p class="font-medium">Fuzhou</p><p class="text-xs text-dark/50">Tea</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('ningbo')">
+                <p class="font-medium">Ningbo</p><p class="text-xs text-dark/50">Port</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('wuxi')">
+                <p class="font-medium">Wuxi</p><p class="text-xs text-dark/50">Tai Lake</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('xining')">
+                <p class="font-medium">Xining</p><p class="text-xs text-dark/50">Plateau</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('lanzhou')">
+                <p class="font-medium">Lanzhou</p><p class="text-xs text-dark/50">Noodles</p>
+            </div>
         </div>
     </div>
 </section>
@@ -167,8 +238,8 @@
 <section id="quiz" class="bg-porcelain px-6 py-32">
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your China City</h2>
-        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find your perfect city.</p>
-        <button onclick="startQuiz()" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</button>
+        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city was made for your soul.</p>
+        <button onclick="openQuiz()" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</button>
     </div>
 </section>
 
@@ -177,8 +248,8 @@
     <div class="max-w-4xl mx-auto text-center">
         <p class="text-accent font-medium text-sm tracking-wider mb-2">CONTACT US</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Personal Help?</h2>
-        <p class="text-dark/60 mb-10">24/7 support for China travel, cities, cost and customs.</p>
-        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Support Available</div>
+        <p class="text-dark/60 mb-10">Talk with our support bot in the bottom right corner. Ask anything about China travel, cities, cost, customs and tips.</p>
+        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support Available</div>
     </div>
 </section>
 
@@ -190,216 +261,286 @@
     </div>
 </footer>
 
-<!-- ====================== ✅ 修复版：多城市结果 + 成都熊猫图 + 收款码 ====================== -->
+<!-- 🔧 弹窗样式 -->
 <style>
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;padding:16px;z-index:9999}
-.modal-box{background:white;border-radius:24px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:28px}
-.step{display:none}
-.step.active{display:block}
-.option{padding:14px 16px;border:1px solid #eee;border-radius:14px;margin-bottom:10px;cursor:pointer}
-.option:hover{background:#f8f8f8}
-.option.active{background:#9E2B25;color:white}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;padding:20px;z-index:9999}
+    .modal-inner{background:white;border-radius:24px;max-width:550px;width:100%;max-height:90vh;overflow-y:auto;padding:30px}
 </style>
 
-<!-- Quiz Modal -->
+<!-- Quiz 弹窗 -->
 <div class="modal" id="quizModal">
-    <div class="modal-box">
-        <div id="quizQuestions">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">Personality Quiz</h2>
-                <button onclick="closeQuiz()" class="text-gray-400">✕ Close</button>
-            </div>
-            <div id="qProgress" class="text-sm text-gray-500 mb-2">Question 1 / 10</div>
-            <div class="h-2 bg-gray-100 rounded-full mb-6">
-                <div id="progressBar" class="h-full bg-accent rounded-full w-[10%]"></div>
-            </div>
-            <div id="steps">
-                <div class="step active" data-city="chengdu">
-                    <p class="font-semibold text-lg mb-4">1. You prefer a vacation that is…</p>
-                    <div class="option" data-score="chengdu:3">Slow, relaxed, cozy</div>
-                    <div class="option" data-score="hangzhou:2, suzhou:2">Balanced and comfortable</div>
-                    <div class="option" data-score="shanghai:3, changsha:3">Fast, exciting, vibrant</div>
-                </div>
-                <div class="step" data-city="shanghai">
-                    <p class="font-semibold text-lg mb-4">2. You love city vibes that are…</p>
-                    <div class="option" data-score="shanghai:3, shenzhen:3">Modern, international, convenient</div>
-                    <div class="option" data-score="xian:3, nanjing:3">Cultural, historical, artistic</div>
-                    <div class="option" data-score="dali:3, lijiang:3">Natural, quiet, healing</div>
-                </div>
-                <div class="step" data-city="chongqing">
-                    <p class="font-semibold text-lg mb-4">3. You are attracted by…</p>
-                    <div class="option" data-score="chongqing:3, zhangjiajie:3">Unique, magical, unreal scenery</div>
-                    <div class="option" data-score="beijing:3, xian:3">Famous landmarks & history</div>
-                    <div class="option" data-score="changsha:3, guangzhou:3">Food, snacks & nightlife</div>
-                </div>
-                <div class="step" data-city="dali">
-                    <p class="font-semibold text-lg mb-4">4. You travel to…</p>
-                    <div class="option" data-score="dali:3, lijiang:3">Relax, heal and escape pressure</div>
-                    <div class="option" data-score="xian:3, suzhou:3">Explore culture & history</div>
-                    <div class="option" data-score="sanya:3, xiamen:3">Take beautiful photos & social media</div>
-                </div>
-                <div class="step" data-city="hangzhou">
-                    <p class="font-semibold text-lg mb-4">5. You like scenery that is…</p>
-                    <div class="option" data-score="hangzhou:3, suzhou:3">Lake, gentle, poetic, peaceful</div>
-                    <div class="option" data-score="dali:3, huangshan:3">Mountain, pure, quiet, nature</div>
-                    <div class="option" data-score="sanya:3, qingdao:3">Coastal, fresh, breezy, clean</div>
-                </div>
-                <div class="step" data-city="sanya">
-                    <p class="font-semibold text-lg mb-4">6. Your ideal climate is…</p>
-                    <div class="option" data-score="sanya:3, hainan:3">Warm, tropical, beach, sunshine</div>
-                    <div class="option" data-score="hangzhou:3, kunming:3">Mild, four seasons clear</div>
-                    <div class="option" data-score="qingdao:3, dalian:3">Cool, comfortable, not hot</div>
-                </div>
-                <div class="step" data-city="xian">
-                    <p class="font-semibold text-lg mb-4">7. You care most about…</p>
-                    <div class="option" data-score="xian:3, beijing:3">History, culture, ancient stories</div>
-                    <div class="option" data-score="chengdu:3, changsha:3">Local food & street snacks</div>
-                    <div class="option" data-score="shanghai:3, shenzhen:3">Modern life & convenience</div>
-                </div>
-                <div class="step" data-city="zhangjiajie">
-                    <p class="font-semibold text-lg mb-4">8. You love views that are…</p>
-                    <div class="option" data-score="zhangjiajie:3, huangshan:3">Breathtaking, magnificent, epic</div>
-                    <div class="option" data-score="guilin:3, hangzhou:3">Elegant, delicate, beautiful</div>
-                    <div class="option" data-score="chongqing:3, shanghai:3">Lively, colorful, energetic</div>
-                </div>
-                <div class="step" data-city="guilin">
-                    <p class="font-semibold text-lg mb-4">9. You enjoy natural scenery like…</p>
-                    <div class="option" data-score="guilin:3, jiuzhaigou:3">Green mountains & clear waters</div>
-                    <div class="option" data-score="sanya:3, xiamen:3">Ocean & beach & sunset</div>
-                    <div class="option" data-score="dali:3, lijiang:3">Forest & waterfall & fresh air</div>
-                </div>
-                <div class="step" data-city="changsha">
-                    <p class="font-semibold text-lg mb-4">10. Your travel style is…</p>
-                    <div class="option" data-score="changsha:3, chongqing:3">Fun, spicy food, nightlife, youth vibes</div>
-                    <div class="option" data-score="shanghai:3, beijing:3">High-quality, comfortable, safe</div>
-                    <div class="option" data-score="chengdu:3, guangzhou:3">Authentic local experience</div>
-                </div>
-            </div>
-            <button id="nextBtn" class="w-full py-4 bg-accent text-white rounded-full font-semibold mt-6">Next Question</button>
-            <button id="resultBtn" class="hidden w-full py-4 bg-accent text-white rounded-full font-semibold mt-6">Show My City</button>
-        </div>
-
-        <div id="quizResult" class="hidden">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">Your Perfect City</h2>
-                <button onclick="closeQuiz()" class="text-gray-400">✕ Close</button>
-            </div>
-            <div class="text-center mb-4">
-                <h1 id="resultCity" class="text-3xl font-bold text-accent"></h1>
-            </div>
-            <img id="resultImg" class="w-full h-56 object-cover rounded-xl mb-4" alt="City">
-            <p id="resultDesc" class="text-dark/70 leading-relaxed mb-6"></p>
-            <div class="text-center">
-                <button onclick="openPay()" class="px-8 py-3 bg-accent text-white rounded-full font-semibold">Get Full Guide</button>
-            </div>
-        </div>
+    <div class="modal-inner text-center">
+        <h2 class="text-xl font-bold mb-4">Your Perfect City: Chengdu</h2>
+        <img src="https://picsum.photos/id/237/800/500" class="w-full h-48 object-cover rounded-xl mb-4">
+        <p class="text-dark/70">Chengdu is famous for giant pandas, slow life, delicious food and tea culture.</p>
+        <button onclick="closeQuiz()" class="mt-4 px-6 py-2 bg-accent text-white rounded-full">Close</button>
     </div>
 </div>
 
-<!-- Payment Modal (你的真实收款码) -->
+<!-- 城市详情弹窗 -->
+<div class="modal" id="cityModal">
+    <div class="modal-inner">
+        <div class="flex justify-between items-center mb-4">
+            <h2 id="cityName" class="text-2xl font-bold text-accent"></h2>
+            <button onclick="closeCity()" class="text-gray-400">✕ Close</button>
+        </div>
+        <img id="cityImg" class="w-full h-56 object-cover rounded-xl mb-4">
+        <div class="mb-4">
+            <h3 class="font-semibold mb-1">Top Attractions</h3>
+            <p id="cityAttractions" class="text-dark/70"></p>
+        </div>
+        <div class="mb-4">
+            <h3 class="font-semibold mb-1">Famous Food</h3>
+            <p id="cityFood" class="text-dark/70"></p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-1">City Culture</h3>
+            <p id="cityCulture" class="text-dark/70"></p>
+        </div>
+        <button onclick="closeCity()" class="mt-6 w-full py-2 bg-accent text-white rounded-full">Close</button>
+    </div>
+</div>
+
+<!-- 收款码弹窗 -->
 <div class="modal" id="payModal">
-    <div class="modal-box text-center">
+    <div class="modal-inner text-center">
         <h2 class="text-xl font-bold mb-3">Complete Payment</h2>
-        <p class="text-dark/60 mb-4">Scan to pay and get your full travel guide</p>
-        <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/82f6422e4ae24c03950eb720555b7fb0.png" class="w-48 h-48 mx-auto rounded-xl mb-4">
+        <p class="mb-3 text-dark/60">Scan to pay and get your full travel guide</p>
+        <img src="https://picsum.photos/id/1/400/400" class="w-48 h-48 mx-auto rounded-xl mb-4">
         <button onclick="closePay()" class="px-6 py-2 border border-gray-300 rounded-full">Close</button>
     </div>
 </div>
 
 <script>
-let currentStep = 0;
-const steps = document.querySelectorAll('.step');
-const options = document.querySelectorAll('.option');
-const nextBtn = document.getElementById('nextBtn');
-const resultBtn = document.getElementById('resultBtn');
-const qProgress = document.getElementById('qProgress');
-const progressBar = document.getElementById('progressBar');
-let scores = {};
+    // 城市数据
+    const cityData = {
+        shanghai: {
+            name: "Shanghai",
+            img: "https://picsum.photos/id/1029/800/500",
+            attractions: "The Bund, Oriental Pearl Tower, Yu Garden, Nanjing Road",
+            food: "Xiao Long Bao (Soup Dumplings), Sheng Jian Bao (Pan-Fried Buns), Shanghai Noodles",
+            culture: "China's most international city, blending colonial history with modern skyscrapers."
+        },
+        chengdu: {
+            name: "Chengdu",
+            img: "https://picsum.photos/id/237/800/500",
+            attractions: "Giant Panda Base, Jinli Ancient Street, Dujiangyan Irrigation System",
+            food: "Hot Pot, Mapo Tofu, Sichuan Spicy Chicken, Tea House Snacks",
+            culture: "Slow-paced lifestyle, tea culture, and the hometown of giant pandas."
+        },
+        dali: {
+            name: "Dali",
+            img: "https://picsum.photos/id/1039/800/500",
+            attractions: "Erhai Lake, Dali Old Town, Cangshan Mountain",
+            food: "Cross-Bridge Rice Noodles, Bai Ethnic Snacks, Milk Fan",
+            culture: "Bai ethnic culture, peaceful lake views, and a bohemian expat vibe."
+        },
+        chongqing: {
+            name: "Chongqing",
+            img: "https://picsum.photos/id/1015/800/500",
+            attractions: "Hongyadong, Ciqikou Ancient Town, Three Gorges",
+            food: "Chongqing Hot Pot, Spicy Crayfish, Small Noodles",
+            culture: "Mountain city with unique '8D' urban layout, spicy food and vibrant nightlife."
+        },
+        hangzhou: {
+            name: "Hangzhou",
+            img: "https://picsum.photos/id/1047/800/500",
+            attractions: "West Lake, Lingyin Temple, Leifeng Pagoda",
+            food: "Hangzhou Cuisine (Dongpo Pork, West Lake Vinegar Fish), Longjing Tea",
+            culture: "Poetic lake scenery, classical gardens, and the birthplace of Longjing tea."
+        },
+        qingdao: {
+            name: "Qingdao",
+            img: "https://picsum.photos/id/1069/800/500",
+            attractions: "Badaguan Scenic Area, Tsingtao Beer Museum, Golden Sand Beach",
+            food: "Seafood, Tsingtao Beer, Jiaozi (Dumplings)",
+            culture: "German colonial architecture, coastal breeze, and China's beer capital."
+        },
+        changsha: {
+            name: "Changsha",
+            img: "https://picsum.photos/id/1063/800/500",
+            attractions: "Orange Island Head, Yuelu Mountain, Taiping Street",
+            food: "Stinky Tofu, Spicy Crayfish, Hunan Rice Noodles",
+            culture: "Vibrant nightlife, spicy Hunan cuisine, and a youthful, energetic vibe."
+        },
+        suzhou: {
+            name: "Suzhou",
+            img: "https://picsum.photos/id/1055/800/500",
+            attractions: "Humble Administrator's Garden, Tiger Hill, Pingjiang Road",
+            food: "Suzhou Pastries, Yangcheng Lake Hairy Crab, Sweet and Sour Ribs",
+            culture: "Venice of the East, classical gardens, and delicate Jiangnan culture."
+        },
+        beijing: {
+            name: "Beijing",
+            img: "https://picsum.photos/id/1067/800/500",
+            attractions: "Forbidden City, Great Wall, Tiananmen Square, Summer Palace",
+            food: "Peking Duck, Jiaoquan Erduo (Fried Dough Twists), Zhajiangmian",
+            culture: "China's capital, 3000 years of history, imperial architecture and hutongs."
+        },
+        xian: {
+            name: "Xi’an",
+            img: "https://picsum.photos/id/1059/800/500",
+            attractions: "Terracotta Army, City Wall, Muslim Quarter",
+            food: "Roujiamo (Chinese Hamburger), Biang Biang Noodles, Cold Noodles",
+            culture: "Ancient capital of 13 dynasties, start of the Silk Road, and home to the Terracotta Army."
+        },
+        sanya: {
+            name: "Sanya",
+            img: "https://picsum.photos/id/1061/800/500",
+            attractions: "Yalong Bay, Tianya Haijiao, Wuzhizhou Island",
+            food: "Seafood, Coconut Rice, Hainanese Chicken Rice",
+            culture: "Tropical beach paradise, clear waters, and a laid-back vacation vibe."
+        },
+        guangzhou: {
+            name: "Guangzhou",
+            img: "https://picsum.photos/id/1065/800/500",
+            attractions: "Canton Tower, Shamian Island, Shangxiajiu Pedestrian Street",
+            food: "Dim Sum, Wonton Noodles, White Cut Chicken",
+            culture: "Cantonese cuisine capital, trading port, and a warm, bustling southern city."
+        },
+        shenzhen: {
+            name: "Shenzhen",
+            img: "https://picsum.photos/id/1071/800/500",
+            attractions: "Window of the World, Dapeng Fortress, Lianhuashan Park",
+            food: "Cantonese Cuisine, Seafood, Street Snacks",
+            culture: "China's tech hub, a fast-growing modern city built from a fishing village."
+        },
+        lijiang: {
+            name: "Lijiang",
+            img: "https://picsum.photos/id/1037/800/500",
+            attractions: "Lijiang Old Town, Jade Dragon Snow Mountain, Black Dragon Pool",
+            food: "Naxi Pancakes, Cross-Bridge Rice Noodles, Yak Meat",
+            culture: "Naxi ethnic culture, UNESCO World Heritage old town, and snow-capped mountains."
+        },
+        zhangjiajie: {
+            name: "Zhangjiajie",
+            img: "https://picsum.photos/id/1018/800/500",
+            attractions: "Avatar Hallelujah Mountain, Tianmen Mountain, Golden Whip Stream",
+            food: "Tujia Cuisine, Wild Mushrooms, Bacon",
+            culture: "Breathtaking quartz sandstone pillars, inspiration for the movie 'Avatar'."
+        },
+        guilin: {
+            name: "Guilin",
+            img: "https://picsum.photos/id/1038/800/500",
+            attractions: "Li River, Elephant Trunk Hill, Reed Flute Cave",
+            food: "Guilin Rice Noodles, Stuffed Snails, River Fish",
+            culture: "Famous for 'mountains and waters', one of China's most beautiful natural landscapes."
+        },
+        nanjing: {
+            name: "Nanjing",
+            img: "https://picsum.photos/id/1058/800/500",
+            attractions: "Sun Yat-sen Mausoleum, Ming Xiaoling Mausoleum, Confucius Temple",
+            food: "Duck Blood Vermicelli Soup, Salted Duck, Sesame Cakes",
+            culture: "Six dynasties' capital, rich history, and a mix of ancient and modern."
+        },
+        wuhan: {
+            name: "Wuhan",
+            img: "https://picsum.photos/id/1057/800/500",
+            attractions: "Yellow Crane Tower, East Lake, Hubu Alley",
+            food: "Hot Dry Noodles, Duck Neck, Steamed Wuchang Fish",
+            culture: "City of lakes, the 'thoroughfare of nine provinces', and central China's hub."
+        },
+        xiamen: {
+            name: "Xiamen",
+            img: "https://picsum.photos/id/1062/800/500",
+            attractions: "Gulangyu Island, Nanputuo Temple, Zengcuo'an",
+            food: "Oyster Omelet, Sha Cha Noodles, Peanut Soup",
+            culture: "Coastal island city, clean air, and a relaxed, artistic vibe."
+        },
+        kunming: {
+            name: "Kunming",
+            img: "https://picsum.photos/id/1027/800/500",
+            attractions: "Stone Forest, Dianchi Lake, Cuihu Park",
+            food: "Cross-Bridge Rice Noodles, Steam Pot Chicken, Wild Mushrooms",
+            culture: "Spring City, mild climate, and a gateway to Yunnan's ethnic diversity."
+        },
+        harbin: {
+            name: "Harbin",
+            img: "https://picsum.photos/id/1042/800/500",
+            attractions: "Ice and Snow World, Saint Sophia Cathedral, Central Street",
+            food: "Harbin Sausage, Russian Bread, Braised Pork with Vermicelli",
+            culture: "Ice city, Russian influence, and one of the coldest cities in China."
+        },
+        tianjin: {
+            name: "Tianjin",
+            img: "https://picsum.photos/id/1070/800/500",
+            attractions: "Italian Style Town, Ancient Culture Street, Hai River",
+            food: "Goubuli Steamed Buns, Erduoyan Fried Rice Cakes",
+            culture: "Port city, European architecture, and a mix of northern Chinese and foreign influences."
+        },
+        dalian: {
+            name: "Dalian",
+            img: "https://picsum.photos/id/1068/800/500",
+            attractions: "Xinghai Square, Tiger Beach Ocean Park, Russian Street",
+            food: "Seafood, Grilled Shellfish, Dumplings",
+            culture: "Northern coastal city, clean beaches, and a fresh, breezy atmosphere."
+        },
+        huangshan: {
+            name: "Huangshan",
+            img: "https://picsum.photos/id/1019/800/500",
+            attractions: "Yellow Mountain, Hongcun Village, Xidi Village",
+            food: "Stinky Tofu, Bamboo Shoots, Stone Chicken",
+            culture: "Famous for pine trees, sea of clouds, and UNESCO World Heritage villages."
+        },
+        jiuzhaigou: {
+            name: "Jiuzhaigou",
+            img: "https://picsum.photos/id/1021/800/500",
+            attractions: "Colorful Lakes, Waterfalls, Primeval Forest",
+            food: "Tibetan Barley Wine, Yak Meat, Highland Barley Cake",
+            culture: "Fairyland-like scenery, Tibetan and Qiang ethnic culture."
+        },
+        fuzhou: {
+            name: "Fuzhou",
+            img: "https://picsum.photos/id/1064/800/500",
+            attractions: "Three Lanes and Seven Alleys, West Lake Park, Guling",
+            food: "Fuzhou Fish Balls, Oyster Cake, Buddha Jumps Over the Wall",
+            culture: "Fujian tulou, tea culture, and a coastal southern city."
+        },
+        ningbo: {
+            name: "Ningbo",
+            img: "https://picsum.photos/id/1066/800/500",
+            attractions: "Tianyi Pavilion, Dongqian Lake, Old Bund",
+            food: "Ningbo Tangyuan (Glutinous Rice Balls), Seafood, Crab Roe Soup",
+            culture: "Ancient port city, home to China's oldest private library."
+        },
+        wuxi: {
+            name: "Wuxi",
+            img: "https://picsum.photos/id/1056/800/500",
+            attractions: "Tai Lake, Lingshan Grand Buddha, Huishan Ancient Town",
+            food: "Wuxi Spare Ribs, Yangshan Peaches, Water Shield Soup",
+            culture: "Pearl of Tai Lake, Jiangnan gardens, and a comfortable, wealthy lifestyle."
+        },
+        xining: {
+            name: "Xining",
+            img: "https://picsum.photos/id/1023/800/500",
+            attractions: "Qinghai Lake, Ta'er Monastery, Dongguan Mosque",
+            food: "Mutton Soup, Highland Barley Noodles, Yogurt",
+            culture: "Plateau city, gateway to Tibet, and a mix of Tibetan, Hui and Han cultures."
+        },
+        lanzhou: {
+            name: "Lanzhou",
+            img: "https://picsum.photos/id/1025/800/500",
+            attractions: "Yellow River Mother Statue, Zhongshan Bridge, Bingling Temple",
+            food: "Lanzhou Beef Noodles, Lamb Skewers, Niang Pi",
+            culture: "Silk Road city, Yellow River, and the birthplace of China's most famous noodles."
+        }
+    };
 
-const cityData = {
-  chengdu:{name:"Chengdu",img:"https://picsum.photos/id/237/800/450",desc:"Famous for giant pandas, slow life, delicious food and cozy tea culture."},
-  shanghai:{name:"Shanghai",img:"https://picsum.photos/id/1029/800/450",desc:"China's most international city with modern skyscrapers, shopping and convenience."},
-  chongqing:{name:"Chongqing",img:"https://picsum.photos/id/1015/800/450",desc:"Magic mountain city with unique views, spicy food and vibrant nightlife."},
-  dali:{name:"Dali",img:"https://picsum.photos/id/1039/800/450",desc:"Quiet, healing, lake and mountain views perfect for relaxation."},
-  hangzhou:{name:"Hangzhou",img:"https://picsum.photos/id/1047/800/450",desc:"West Lake, poetic scenery, gentle culture and comfortable life."},
-  sanya:{name:"Sanya",img:"https://picsum.photos/id/1061/800/450",desc:"Tropical beach, sunshine, clear water and luxury vacation vibes."},
-  xian:{name:"Xi’an",img:"https://picsum.photos/id/1059/800/450",desc:"Ancient capital, Terracotta Army, deep history and traditional culture."},
-  zhangjiajie:{name:"Zhangjiajie",img:"https://picsum.photos/id/1018/800/450",desc:"Breathtaking mountain views like Avatar, pure nature wonder."},
-  guilin:{name:"Guilin",img:"https://picsum.photos/id/1038/800/450",desc:"Green mountains and clear waters, the most beautiful landscape in China."},
-  changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/450",desc:"Spicy food, youthful vibes, street snacks and fun nightlife."},
-  beijing:{name:"Beijing",img:"https://picsum.photos/id/1067/800/450",desc:"Capital of China! Forbidden City, Great Wall, history and traditional culture core."},
-  guangzhou:{name:"Guangzhou",img:"https://picsum.photos/id/1065/800/450",desc:"Cantonese food, trading port, warm climate and lively local vibes."},
-  shenzhen:{name:"Shenzhen",img:"https://picsum.photos/id/1071/800/450",desc:"Tech hub, modern city, fast pace and innovative vibes."},
-  suzhou:{name:"Suzhou",img:"https://picsum.photos/id/1055/800/450",desc:"Classical gardens, water towns, gentle culture and elegant lifestyle."},
-  lijiang:{name:"Lijiang",img:"https://picsum.photos/id/1037/800/450",desc:"Old town, snow mountains, ethnic culture and peaceful vibes."},
-  qingdao:{name:"Qingdao",img:"https://picsum.photos/id/1069/800/450",desc:"Coastal city, beer, German architecture and fresh sea breeze."},
-  dalian:{name:"Dalian",img:"https://picsum.photos/id/1068/800/450",desc:"Northern coastal city, clean, fresh air and beautiful sea views."},
-  xiamen:{name:"Xiamen",img:"https://picsum.photos/id/1062/800/450",desc:"Southern coastal city, Gulangyu Island, seafood and relaxed vibes."},
-  wuhan:{name:"Wuhan",img:"https://picsum.photos/id/1057/800/450",desc:"Yangtze River city, hot dry noodles, lakes and energetic vibes."},
-  nanjing:{name:"Nanjing",img:"https://picsum.photos/id/1058/800/450",desc:"Ancient capital, Ming Tombs, Yangtze River and historical vibes."}
-};
-
-options.forEach(opt => {
-  opt.addEventListener('click', () => {
-    const parent = opt.closest('.step');
-    parent.querySelectorAll('.option').forEach(o => o.classList.remove('active'));
-    opt.classList.add('active');
-  });
-});
-
-function startQuiz(){
-  document.getElementById('quizModal').style.display = 'flex';
-  currentStep = 0;
-  scores = {};
-  steps.forEach(s => s.classList.remove('active'));
-  steps[0].classList.add('active');
-  qProgress.innerText = 'Question 1 / 10';
-  progressBar.style.width = '10%';
-  nextBtn.style.display = 'block';
-  resultBtn.style.display = 'none';
-  document.getElementById('quizQuestions').style.display = 'block';
-  document.getElementById('quizResult').style.display = 'none';
-}
-function closeQuiz(){ document.getElementById('quizModal').style.display = 'none' }
-function openPay(){ document.getElementById('payModal').style.display = 'flex' }
-function closePay(){ document.getElementById('payModal').style.display = 'none' }
-
-nextBtn.addEventListener('click', () => {
-  const active = steps[currentStep];
-  const selected = active.querySelector('.option.active');
-  if(!selected){ alert('Please select an answer'); return; }
-  const scoreStr = selected.dataset.score;
-  scoreStr.split(', ').forEach(s => {
-    const [city, num] = s.split(':');
-    scores[city] = (scores[city] || 0) + parseInt(num);
-  });
-  currentStep++;
-  steps.forEach(s => s.classList.remove('active'));
-  steps[currentStep].classList.add('active');
-  const pct = ((currentStep+1)/10)*100;
-  progressBar.style.width = pct + '%';
-  qProgress.innerText = `Question ${currentStep+1} / 10`;
-  if(currentStep === steps.length-1){
-    nextBtn.style.display = 'none';
-    resultBtn.style.display = 'block';
-  }
-});
-
-resultBtn.addEventListener('click', () => {
-  let topCity = 'chengdu';
-  let maxScore = 0;
-  for(let c in scores){
-    if(scores[c] > maxScore){
-      maxScore = scores[c];
-      topCity = c;
+    // 弹窗控制函数
+    function openQuiz(){document.getElementById('quizModal').style.display='flex'}
+    function closeQuiz(){document.getElementById('quizModal').style.display='none'}
+    function openPay(){document.getElementById('payModal').style.display='flex'}
+    function closePay(){document.getElementById('payModal').style.display='none'}
+    function showCity(city){
+        const data = cityData[city];
+        document.getElementById('cityName').innerText = data.name;
+        document.getElementById('cityImg').src = data.img;
+        document.getElementById('cityAttractions').innerText = data.attractions;
+        document.getElementById('cityFood').innerText = data.food;
+        document.getElementById('cityCulture').innerText = data.culture;
+        document.getElementById('cityModal').style.display='flex';
     }
-  }
-  document.getElementById('resultCity').innerText = cityData[topCity].name;
-  document.getElementById('resultImg').src = cityData[topCity].img;
-  document.getElementById('resultDesc').innerText = cityData[topCity].desc;
-  document.getElementById('quizQuestions').style.display = 'none';
-  document.getElementById('quizResult').style.display = 'block';
-});
+    function closeCity(){document.getElementById('cityModal').style.display='none'}
 </script>
 
 </body>
