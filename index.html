@@ -24,14 +24,15 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-            .card-hover { transition: 0.35s ease all; }
-            .card-hover:hover { transform: translateY(-6px); }
-            .quiz-step { display: none; }
-            .quiz-step.active { display: block; }
-            .option { transition: 0.2s; cursor: pointer; }
-            .option:hover { background: rgba(158,43,37,0.08); }
-            .option.active { background: #9E2B25; color: white; }
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            .card-hover {
+                transition: 0.35s ease all;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+            }
         }
     </style>
 </head>
@@ -58,7 +59,7 @@
         <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-tight mb-6 text-shadow">Travel China<br/><span class="text-accent">As Who You Are</span></h1>
         <p class="text-dark/60 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed">We match your unique personality, lifestyle and budget to your perfect Chinese cities. No generic tours, no crowded routes — only travel made for you.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="javascript:startQuiz()" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Personality Quiz</a>
+            <a href="javascript:startQuiz()" class="px-8 py-3 bg-accent text-white rounded-full font-medium card-hover">Start Your Personality Quiz</a>
             <a href="#pricing" class="px-8 py-3 border border-dark/20 rounded-full font-medium hover:bg-dark/5 card-hover">View Pricing</a>
         </div>
     </div>
@@ -80,12 +81,12 @@
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">02</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3">City Matching</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Match you with the most popular 30 China cities on TikTok, YouTube & Xiaohongshu.</p>
+                <p class="text-dark/60 text-sm leading-relaxed">Match you with top trending cities on TikTok, YouTube & Xiaohongshu.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">03</span>
                 <h3 class="text-xl font-semibold mt-4 mb-3">Custom Plan</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Get full guide with images, food, transport, budget, scams & hidden tips.</p>
+                <p class="text-dark/60 text-sm leading-relaxed">Receive full guide with images, food, transport, budget, scams & hidden tips.</p>
             </div>
         </div>
     </div>
@@ -113,7 +114,7 @@
                     <li>✓ Basic consumption budget guide</li>
                     <li>✓ Top local food recommendations</li>
                 </ul>
-                <button onclick="showPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
+                <button onclick="openPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
             </div>
             <div class="border border-accent/40 bg-accent/5 rounded-2xl p-10 card-hover relative">
                 <span class="absolute top-4 right-6 text-xs bg-accent px-3 py-1 rounded-full">MOST POPULAR</span>
@@ -130,7 +131,7 @@
                     <li>✓ Local daily life etiquette</li>
                     <li>✓ 24h Email support</li>
                 </ul>
-                <button onclick="showPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
+                <button onclick="openPay()" class="mt-8 w-full py-3 bg-accent rounded-full text-white font-medium">Buy Now</button>
             </div>
         </div>
     </div>
@@ -141,40 +142,18 @@
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">CITY DATABASE</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">30 Most Popular Cities For Foreigners</h2>
-            <p class="text-dark/60 max-w-xl mx-auto">TikTok / YouTube / Xiaohongshu Top Trending Cities</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Cities We Cover</h2>
+            <p class="text-dark/60 max-w-xl mx-auto">Each city has unique energy. We match your persona to the right place.</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Shanghai</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Beijing</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Chengdu</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Chongqing</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Guangzhou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Shenzhen</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Hangzhou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Suzhou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Xi’an</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Dali</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Lijiang</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Sanya</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Qingdao</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Dalian</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Xiamen</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Changsha</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Wuhan</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Nanjing</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Tianjin</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Harbin</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Guilin</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Zhangjiajie</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Huangshan</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Xining</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Lanzhou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Kunming</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Jiuzhaigou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Fuzhou</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Ningbo</div>
-            <div class="p-4 bg-white rounded-xl shadow-sm text-sm">Wuxi</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Shanghai</p><p class="text-xs text-dark/50">Modern & Busy</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chengdu</p><p class="text-xs text-dark/50">Food & Slow Life</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Dali</p><p class="text-xs text-dark/50">Quiet & Healing</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Chongqing</p><p class="text-xs text-dark/50">Mystic & Mountainous</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Hangzhou</p><p class="text-xs text-dark/50">Elegant & Gentle</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Qingdao</p><p class="text-xs text-dark/50">Coastal & Fresh</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Changsha</p><p class="text-xs text-dark/50">Spicy & Youthful</p></div>
+            <div class="p-6 bg-white rounded-xl shadow-sm card-hover"><p class="font-medium">Suzhou</p><p class="text-xs text-dark/50">Classical & Artistic</p></div>
         </div>
     </div>
 </section>
@@ -183,7 +162,7 @@
 <section id="quiz" class="bg-porcelain px-6 py-32">
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your China City</h2>
-        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take 3-minute professional quiz. Get your perfect city with photos & full report.</p>
+        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city was made for your soul.</p>
         <a href="javascript:startQuiz()" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</a>
     </div>
 </section>
@@ -193,8 +172,8 @@
     <div class="max-w-4xl mx-auto text-center">
         <p class="text-accent font-medium text-sm tracking-wider mb-2">CONTACT US</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Personal Help?</h2>
-        <p class="text-dark/60 mb-10">24/7 AI support for travel, cities, cost, customs and tips.</p>
-        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support</div>
+        <p class="text-dark/60 mb-10">Talk with our support bot in the bottom right corner. Ask anything about China travel, cities, cost, customs and tips.</p>
+        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support Available</div>
     </div>
 </section>
 
@@ -206,197 +185,197 @@
     </div>
 </footer>
 
-<!-- FULL QUIZ + RESULT + PAYMENT POPUP (ALL IN ONE) -->
-<div id="quizModal" class="fixed inset-0 z-50 bg-dark/90 backdrop-blur flex items-center justify-center px-4 py-10 hidden">
-    <div class="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8">
-        <div id="quizBox">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold">China Travel Personality Quiz</h3>
-                <button onclick="closeQuiz()" class="text-dark/50">✕ Close</button>
+<!-- ====================== ✅ 10题测试 + 题号 + 城市图片 + 收款码 ====================== -->
+<style>
+.quiz-modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);display:none;justify-content:center;align-items:center;padding:20px;z-index:9999}
+.quiz-box{background:white;border-radius:24px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;padding:32px}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.option{padding:14px 16px;border-radius:14px;border:1px solid #eee;margin-bottom:10px;cursor:pointer}
+.option:hover{background:#f9f9f9}
+.option.active{background:#9E2B25;color:white}
+.question-counter{font-size:14px;color:#888;margin-bottom:8px}
+</style>
+
+<div class="quiz-modal" id="quizModal">
+    <div class="quiz-box">
+        <div id="quizForm">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-xl font-bold">Personality Quiz</h2>
+                <button onclick="closeQuiz()" class="text-gray-400">✕ Close</button>
             </div>
-            <div class="h-2 bg-gray-100 rounded-full mb-6">
-                <div id="progress" class="h-full bg-accent rounded-full w-0"></div>
+            <div class="question-counter" id="qCounter">Question 1 / 10</div>
+            <div class="h-2 bg-gray-100 rounded-full mb-5">
+                <div id="progressBar" class="h-full bg-accent rounded-full w-0"></div>
             </div>
             <div id="steps">
                 <div class="quiz-step active" data-city="chengdu">
-                    <p class="font-semibold mb-3">1. You prefer a vacation that is…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Slow, relaxed, cozy</div>
-                    <div class="option p-3 rounded-xl border mb-2">Balanced and comfortable</div>
-                    <div class="option p-3 rounded-xl border">Fast, exciting, vibrant</div>
+                    <p class="font-semibold text-lg mb-4">1. You prefer a vacation that is…</p>
+                    <div class="option">Slow, relaxed, cozy</div>
+                    <div class="option">Balanced and comfortable</div>
+                    <div class="option">Fast, exciting, vibrant</div>
                 </div>
                 <div class="quiz-step" data-city="shanghai">
-                    <p class="font-semibold mb-3">2. You love city vibes that are…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Modern, international, convenient</div>
-                    <div class="option p-3 rounded-xl border mb-2">Cultural, historical, artistic</div>
-                    <div class="option p-3 rounded-xl border">Natural, quiet, healing</div>
+                    <p class="font-semibold text-lg mb-4">2. You love city vibes that are…</p>
+                    <div class="option">Modern, international, convenient</div>
+                    <div class="option">Cultural, historical, artistic</div>
+                    <div class="option">Natural, quiet, healing</div>
                 </div>
                 <div class="quiz-step" data-city="chongqing">
-                    <p class="font-semibold mb-3">3. You are attracted by…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Unique, magical, unreal scenery</div>
-                    <div class="option p-3 rounded-xl border mb-2">Famous landmarks & history</div>
-                    <div class="option p-3 rounded-xl border">Food, snacks & nightlife</div>
+                    <p class="font-semibold text-lg mb-4">3. You are attracted by…</p>
+                    <div class="option">Unique, magical, unreal scenery</div>
+                    <div class="option">Famous landmarks & history</div>
+                    <div class="option">Food, snacks & nightlife</div>
                 </div>
                 <div class="quiz-step" data-city="dali">
-                    <p class="font-semibold mb-3">4. You travel to…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Relax, heal and escape pressure</div>
-                    <div class="option p-3 rounded-xl border mb-2">Explore culture & history</div>
-                    <div class="option p-3 rounded-xl border">Take beautiful photos & social media</div>
+                    <p class="font-semibold text-lg mb-4">4. You travel to…</p>
+                    <div class="option">Relax, heal and escape pressure</div>
+                    <div class="option">Explore culture & history</div>
+                    <div class="option">Take beautiful photos & social media</div>
                 </div>
                 <div class="quiz-step" data-city="hangzhou">
-                    <p class="font-semibold mb-3">5. You like scenery that is…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Lake, gentle, poetic, peaceful</div>
-                    <div class="option p-3 rounded-xl border mb-2">Mountain, pure, quiet, nature</div>
-                    <div class="option p-3 rounded-xl border">Coastal, fresh, breezy, clean</div>
+                    <p class="font-semibold text-lg mb-4">5. You like scenery that is…</p>
+                    <div class="option">Lake, gentle, poetic, peaceful</div>
+                    <div class="option">Mountain, pure, quiet, nature</div>
+                    <div class="option">Coastal, fresh, breezy, clean</div>
                 </div>
                 <div class="quiz-step" data-city="sanya">
-                    <p class="font-semibold mb-3">6. Your ideal climate is…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Warm, tropical, beach, sunshine</div>
-                    <div class="option p-3 rounded-xl border mb-2">Mild, four seasons clear</div>
-                    <div class="option p-3 rounded-xl border">Cool, comfortable, not hot</div>
+                    <p class="font-semibold text-lg mb-4">6. Your ideal climate is…</p>
+                    <div class="option">Warm, tropical, beach, sunshine</div>
+                    <div class="option">Mild, four seasons clear</div>
+                    <div class="option">Cool, comfortable, not hot</div>
                 </div>
                 <div class="quiz-step" data-city="xian">
-                    <p class="font-semibold mb-3">7. You care most about…</p>
-                    <div class="option p-3 rounded-xl border mb-2">History, culture, ancient stories</div>
-                    <div class="option p-3 rounded-xl border mb-2">Local food & street snacks</div>
-                    <div class="option p-3 rounded-xl border">Modern life & convenience</div>
+                    <p class="font-semibold text-lg mb-4">7. You care most about…</p>
+                    <div class="option">History, culture, ancient stories</div>
+                    <div class="option">Local food & street snacks</div>
+                    <div class="option">Modern life & convenience</div>
                 </div>
                 <div class="quiz-step" data-city="zhangjiajie">
-                    <p class="font-semibold mb-3">8. You love views that are…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Breathtaking, magnificent, epic</div>
-                    <div class="option p-3 rounded-xl border mb-2">Elegant, delicate, beautiful</div>
-                    <div class="option p-3 rounded-xl border">Lively, colorful, energetic</div>
+                    <p class="font-semibold text-lg mb-4">8. You love views that are…</p>
+                    <div class="option">Breathtaking, magnificent, epic</div>
+                    <div class="option">Elegant, delicate, beautiful</div>
+                    <div class="option">Lively, colorful, energetic</div>
                 </div>
                 <div class="quiz-step" data-city="guilin">
-                    <p class="font-semibold mb-3">9. You enjoy natural scenery like…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Green mountains & clear waters</div>
-                    <div class="option p-3 rounded-xl border mb-2">Ocean & beach & sunset</div>
-                    <div class="option p-3 rounded-xl border">Forest & waterfall & fresh air</div>
+                    <p class="font-semibold text-lg mb-4">9. You enjoy natural scenery like…</p>
+                    <div class="option">Green mountains & clear waters</div>
+                    <div class="option">Ocean & beach & sunset</div>
+                    <div class="option">Forest & waterfall & fresh air</div>
                 </div>
                 <div class="quiz-step" data-city="changsha">
-                    <p class="font-semibold mb-3">10. Your travel style is…</p>
-                    <div class="option p-3 rounded-xl border mb-2">Fun, spicy food, nightlife, youth vibes</div>
-                    <div class="option p-3 rounded-xl border mb-2">High-quality, comfortable, safe</div>
-                    <div class="option p-3 rounded-xl border">Authentic local experience</div>
+                    <p class="font-semibold text-lg mb-4">10. Your travel style is…</p>
+                    <div class="option">Fun, spicy food, nightlife, youth vibes</div>
+                    <div class="option">High-quality, comfortable, safe</div>
+                    <div class="option">Authentic local experience</div>
                 </div>
             </div>
-            <button id="nextBtn" class="w-full py-4 bg-accent text-white rounded-full font-semibold mt-8">Next Question</button>
-            <button id="resultBtn" class="hidden w-full py-4 bg-accent text-white rounded-full font-semibold mt-8">Show My City</button>
+            <button id="nextBtn" class="w-full py-4 bg-accent text-white rounded-full font-semibold mt-6">Next Question</button>
+            <button id="resultBtn" class="hidden w-full py-4 bg-accent text-white rounded-full font-semibold mt-6">Show My Perfect City</button>
         </div>
 
-        <div id="resultBox" class="hidden">
+        <div id="resultPage" class="hidden">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold">Your Perfect China City</h3>
-                <button onclick="closeQuiz()" class="text-dark/50">✕ Close</button>
+                <h2 class="text-xl font-bold">Your Perfect City</h2>
+                <button onclick="closeQuiz()" class="text-gray-400">✕ Close</button>
             </div>
             <div class="text-center mb-4">
-                <h1 id="resultName" class="text-3xl font-bold text-accent"></h1>
+                <h1 id="resCity" class="text-3xl font-bold text-accent"></h1>
             </div>
-            <img id="resultImg" class="w-full h-56 object-cover rounded-2xl mb-6" src="">
-            <div class="text-dark/80 leading-relaxed mb-6" id="resultDesc"></div>
+            <img id="resImg" class="w-full h-56 object-cover rounded-2xl mb-5" alt="City">
+            <p id="resDesc" class="text-dark/80 leading-relaxed mb-6"></p>
             <div class="text-center">
-                <button onclick="goToPayout()" class="px-8 py-3 bg-accent text-white rounded-full font-semibold">Get Full Guide Now</button>
+                <button onclick="openPay()" class="px-8 py-3 bg-accent text-white rounded-full font-semibold">Get Full Guide</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- PAYMENT POPUP -->
-<div id="payModal" class="fixed inset-0 z-50 bg-dark/90 backdrop-blur flex items-center justify-center hidden">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center">
-        <h3 class="text-xl font-bold mb-4">Complete Your Payment</h3>
-        <p class="mb-4 text-dark/70">Scan to pay $9.99 and get full guide instantly</p>
-        <img src="https://picsum.photos/id/237/300/300" class="w-48 h-48 mx-auto rounded-xl mb-6" alt="Payment QR Code">
-        <p class="text-sm text-dark/60 mb-4">After payment, you will receive the guide via email</p>
-        <button onclick="closePay()" class="px-6 py-2 border rounded-full">Close</button>
+<!-- Payment Modal -->
+<div class="quiz-modal" id="payModal">
+    <div class="quiz-box text-center">
+        <h2 class="text-xl font-bold mb-3">Complete Payment</h2>
+        <p class="text-dark/60 mb-4">Scan to pay and get your full travel guide</p>
+        <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/82f6422e4ae24c03950eb720555b7fb0.png" class="w-56 h-56 mx-auto rounded-xl mb-4">
+        <button onclick="closePay()" class="px-6 py-2 border border-gray-300 rounded-full">Close</button>
     </div>
 </div>
 
 <script>
-    let currentStep = 0;
-    const steps = document.querySelectorAll('.quiz-step');
-    const options = document.querySelectorAll('.option');
-    const progress = document.getElementById('progress');
-    const nextBtn = document.getElementById('nextBtn');
-    const resultBtn = document.getElementById('resultBtn');
-    const quizBox = document.getElementById('quizBox');
-    const resultBox = document.getElementById('resultBox');
-    const quizModal = document.getElementById('quizModal');
-    const payModal = document.getElementById('payModal');
-    let scores = {};
+let current = 0;
+const steps = document.querySelectorAll('.quiz-step');
+const options = document.querySelectorAll('.option');
+const progress = document.getElementById('progressBar');
+const qCounter = document.getElementById('qCounter');
+const nextBtn = document.getElementById('nextBtn');
+const resultBtn = document.getElementById('resultBtn');
+const quizForm = document.getElementById('quizForm');
+const resultPage = document.getElementById('resultPage');
+let scores = {};
 
-    const cityData = {
-        chengdu: { name: "Chengdu", img: "https://picsum.photos/id/1036/800/450", desc: "Chengdu is your best match! Slow life, giant pandas, delicious food, tea houses and cozy vibes. Super popular on TikTok." },
-        shanghai: { name: "Shanghai", img: "https://picsum.photos/id/1029/800/450", desc: "Shanghai is your city! Modern, international, convenient, skyscrapers, shopping, cafes and high-quality urban experience." },
-        chongqing: { name: "Chongqing", img: "https://picsum.photos/id/1015/800/450", desc: "Chongqing is magical! Mysterious mountain city, spicy food, unreal views, top trending on YouTube & Xiaohongshu." },
-        dali: { name: "Dali", img: "https://picsum.photos/id/1039/800/450", desc: "Dali is perfect for you! Mountains, lake, peace, healing and pure air. Foreigners’ favorite relaxing spot." },
-        hangzhou: { name: "Hangzhou", img: "https://picsum.photos/id/1047/800/450", desc: "Hangzhou: West Lake, gentle culture, poetic scenery, traditional beauty and comfortable travel vibes." },
-        sanya: { name: "Sanya", img: "https://picsum.photos/id/1061/800/450", desc: "Sanya: China Hawaii! Beach, sunshine, tropical style, clear water and luxury vacation vibes." },
-        xian: { name: "Xi’an", img: "https://picsum.photos/id/1059/800/450", desc: "Xi’an: Ancient capital, Terracotta Army, history, traditional food and Chinese culture core." },
-        zhangjiajie: { name: "Zhangjiajie", img: "https://picsum.photos/id/1018/800/450", desc: "Zhangjiajie: Avatar mountains! Epic, breathtaking, natural wonder and most famous mountain in China." },
-        guilin: { name: "Guilin", img: "https://picsum.photos/id/1038/800/450", desc: "Guilin: Most beautiful landscape in China! Green mountains, clear water, peaceful and picturesque." },
-        changsha: { name: "Changsha", img: "https://picsum.photos/id/1063/800/450", desc: "Changsha: Spicy food, nightlife, youthful vibes, street snacks and super fun for young travelers." }
-    };
+const cityData = {
+  chengdu:{name:"Chengdu",img:"https://picsum.photos/id/1074/800/450",desc:"Top trending on TikTok! Slow life, giant pandas, delicious food, cozy tea houses and super relaxing vibes."},
+  shanghai:{name:"Shanghai",img:"https://picsum.photos/id/1029/800/450",desc:"Most international city in China. Modern skyscrapers, shopping, cafes, convenient and high-quality."},
+  chongqing:{name:"Chongqing",img:"https://picsum.photos/id/1015/800/450",desc:"Magical mountain city! Viral on YouTube & Xiaohongshu. Unique views, spicy food, amazing vibes."},
+  dali:{name:"Dali",img:"https://picsum.photos/id/1039/800/450",desc:"Foreigners' favorite healing place. Mountains, lake, peace, clean air and pure happiness."},
+  hangzhou:{name:"Hangzhou",img:"https://picsum.photos/id/1047/800/450",desc:"West Lake beauty, poetic scenery, gentle culture, comfortable and elegant travel."},
+  sanya:{name:"Sanya",img:"https://picsum.photos/id/1061/800/450",desc:"China Hawaii! Beach, sunshine, tropical style, clear water and luxury vacation."},
+  xian:{name:"Xi’an",img:"https://picsum.photos/id/1059/800/450",desc:"Ancient capital, Terracotta Army, deep history, traditional food and Chinese culture core."},
+  zhangjiajie:{name:"Zhangjiajie",img:"https://picsum.photos/id/1018/800/450",desc:"Avatar mountains! Breathtaking natural wonder, most famous mountain in China."},
+  guilin:{name:"Guilin",img:"https://picsum.photos/id/1038/800/450",desc:"Most beautiful landscape! Green mountains, clear waters, peaceful and picturesque."},
+  changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/450",desc:"Spicy food, nightlife, youthful vibes, street snacks and super fun for young travelers."}
+};
 
-    options.forEach(opt => {
-        opt.addEventListener('click', () => {
-            const p = opt.closest('.quiz-step');
-            p.querySelectorAll('.option').forEach(o => o.classList.remove('active'));
-            opt.classList.add('active');
-        });
-    });
+options.forEach(o => {
+  o.addEventListener('click', () => {
+    const p = o.closest('.quiz-step');
+    p.querySelectorAll('.option').forEach(x => x.classList.remove('active'));
+    o.classList.add('active');
+  });
+});
 
-    function startQuiz() {
-        quizModal.classList.remove('hidden');
-        currentStep = 0;
-        progress.style.width = '10%';
-    }
+function startQuiz(){
+  document.getElementById('quizModal').style.display = 'flex';
+  current = 0;
+  steps.forEach(s => s.classList.remove('active'));
+  steps[0].classList.add('active');
+  progress.style.width = '10%';
+  qCounter.innerText = 'Question 1 / 10';
+  quizForm.style.display = 'block';
+  resultPage.style.display = 'none';
+  nextBtn.style.display = 'block';
+  resultBtn.style.display = 'none';
+}
+function closeQuiz(){ document.getElementById('quizModal').style.display = 'none' }
+function openPay(){ document.getElementById('payModal').style.display = 'flex' }
+function closePay(){ document.getElementById('payModal').style.display = 'none' }
 
-    function closeQuiz() {
-        quizModal.classList.add('hidden');
-    }
+nextBtn.addEventListener('click', () => {
+  const activeStep = steps[current];
+  const selected = activeStep.querySelector('.option.active');
+  if(!selected){ alert('Please select an answer'); return; }
+  const city = activeStep.dataset.city;
+  scores[city] = (scores[city] || 0) + 1;
+  current++;
+  steps.forEach(s => s.classList.remove('active'));
+  steps[current].classList.add('active');
+  progress.style.width = ((current+1)/10)*100 + '%';
+  qCounter.innerText = `Question ${current+1} / 10`;
+  if(current === steps.length-1){
+    nextBtn.style.display = 'none';
+    resultBtn.style.display = 'block';
+  }
+});
 
-    function showPay() {
-        payModal.classList.remove('hidden');
-    }
-
-    function closePay() {
-        payModal.classList.add('hidden');
-    }
-
-    function goToPayout() {
-        closeQuiz();
-        showPay();
-    }
-
-    nextBtn.addEventListener('click', () => {
-        const active = steps[currentStep];
-        const sel = active.querySelector('.option.active');
-        if (!sel) { alert("Please choose one answer"); return; }
-        const city = active.dataset.city;
-        scores[city] = (scores[city] || 0) + 1;
-        currentStep++;
-        steps.forEach(s => s.classList.remove('active'));
-        if (currentStep < steps.length) {
-            steps[currentStep].classList.add('active');
-            progress.style.width = ((currentStep + 1) * 10) + '%';
-            if (currentStep === steps.length - 1) {
-                nextBtn.classList.add('hidden');
-                resultBtn.classList.remove('hidden');
-            }
-        }
-    });
-
-    resultBtn.addEventListener('click', () => {
-        let top = 'chengdu';
-        for (let c in scores) {
-            if (scores[c] > scores[top]) top = c;
-        }
-        document.getElementById('resultName').innerText = cityData[top].name;
-        document.getElementById('resultImg').src = cityData[top].img;
-        document.getElementById('resultDesc').innerText = cityData[top].desc;
-        quizBox.classList.add('hidden');
-        resultBox.classList.remove('hidden');
-    });
+resultBtn.addEventListener('click', () => {
+  let top = 'chengdu';
+  for(let c in scores){ if(scores[c] > scores[top]) top = c; }
+  document.getElementById('resCity').innerText = cityData[top].name;
+  document.getElementById('resImg').src = cityData[top].img;
+  document.getElementById('resDesc').innerText = cityData[top].desc;
+  quizForm.style.display = 'none';
+  resultPage.style.display = 'block';
+});
 </script>
 
 </body>
