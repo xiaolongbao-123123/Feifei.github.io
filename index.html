@@ -24,15 +24,9 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .text-shadow {
-                text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            }
-            .card-hover {
-                transition: 0.35s ease all;
-            }
-            .card-hover:hover {
-                transform: translateY(-6px);
-            }
+            .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+            .card-hover { transition: 0.35s ease all; }
+            .card-hover:hover { transform: translateY(-6px); }
         }
     </style>
 </head>
@@ -92,7 +86,7 @@
     </div>
 </section>
 
-<!-- Pricing (三档价格：你要的三种) -->
+<!-- Pricing (三档价格) -->
 <section id="pricing" class="bg-dark text-white px-6 py-24">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -196,7 +190,7 @@
     </div>
 </footer>
 
-<!-- ====================== ✅ 10题测验 + 题号显示 + 多城市图片 + 收款码 ====================== -->
+<!-- ====================== ✅ 修复版：多城市结果 + 成都熊猫图 + 收款码 ====================== -->
 <style>
 .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;padding:16px;z-index:9999}
 .modal-box{background:white;border-radius:24px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:28px}
@@ -222,63 +216,63 @@
             <div id="steps">
                 <div class="step active" data-city="chengdu">
                     <p class="font-semibold text-lg mb-4">1. You prefer a vacation that is…</p>
-                    <div class="option">Slow, relaxed, cozy</div>
-                    <div class="option">Balanced and comfortable</div>
-                    <div class="option">Fast, exciting, vibrant</div>
+                    <div class="option" data-score="chengdu:3">Slow, relaxed, cozy</div>
+                    <div class="option" data-score="hangzhou:2, suzhou:2">Balanced and comfortable</div>
+                    <div class="option" data-score="shanghai:3, changsha:3">Fast, exciting, vibrant</div>
                 </div>
                 <div class="step" data-city="shanghai">
                     <p class="font-semibold text-lg mb-4">2. You love city vibes that are…</p>
-                    <div class="option">Modern, international, convenient</div>
-                    <div class="option">Cultural, historical, artistic</div>
-                    <div class="option">Natural, quiet, healing</div>
+                    <div class="option" data-score="shanghai:3, shenzhen:3">Modern, international, convenient</div>
+                    <div class="option" data-score="xian:3, nanjing:3">Cultural, historical, artistic</div>
+                    <div class="option" data-score="dali:3, lijiang:3">Natural, quiet, healing</div>
                 </div>
                 <div class="step" data-city="chongqing">
                     <p class="font-semibold text-lg mb-4">3. You are attracted by…</p>
-                    <div class="option">Unique, magical, unreal scenery</div>
-                    <div class="option">Famous landmarks & history</div>
-                    <div class="option">Food, snacks & nightlife</div>
+                    <div class="option" data-score="chongqing:3, zhangjiajie:3">Unique, magical, unreal scenery</div>
+                    <div class="option" data-score="beijing:3, xian:3">Famous landmarks & history</div>
+                    <div class="option" data-score="changsha:3, guangzhou:3">Food, snacks & nightlife</div>
                 </div>
                 <div class="step" data-city="dali">
                     <p class="font-semibold text-lg mb-4">4. You travel to…</p>
-                    <div class="option">Relax, heal and escape pressure</div>
-                    <div class="option">Explore culture & history</div>
-                    <div class="option">Take beautiful photos & social media</div>
+                    <div class="option" data-score="dali:3, lijiang:3">Relax, heal and escape pressure</div>
+                    <div class="option" data-score="xian:3, suzhou:3">Explore culture & history</div>
+                    <div class="option" data-score="sanya:3, xiamen:3">Take beautiful photos & social media</div>
                 </div>
                 <div class="step" data-city="hangzhou">
                     <p class="font-semibold text-lg mb-4">5. You like scenery that is…</p>
-                    <div class="option">Lake, gentle, poetic, peaceful</div>
-                    <div class="option">Mountain, pure, quiet, nature</div>
-                    <div class="option">Coastal, fresh, breezy, clean</div>
+                    <div class="option" data-score="hangzhou:3, suzhou:3">Lake, gentle, poetic, peaceful</div>
+                    <div class="option" data-score="dali:3, huangshan:3">Mountain, pure, quiet, nature</div>
+                    <div class="option" data-score="sanya:3, qingdao:3">Coastal, fresh, breezy, clean</div>
                 </div>
                 <div class="step" data-city="sanya">
                     <p class="font-semibold text-lg mb-4">6. Your ideal climate is…</p>
-                    <div class="option">Warm, tropical, beach, sunshine</div>
-                    <div class="option">Mild, four seasons clear</div>
-                    <div class="option">Cool, comfortable, not hot</div>
+                    <div class="option" data-score="sanya:3, hainan:3">Warm, tropical, beach, sunshine</div>
+                    <div class="option" data-score="hangzhou:3, kunming:3">Mild, four seasons clear</div>
+                    <div class="option" data-score="qingdao:3, dalian:3">Cool, comfortable, not hot</div>
                 </div>
                 <div class="step" data-city="xian">
                     <p class="font-semibold text-lg mb-4">7. You care most about…</p>
-                    <div class="option">History, culture, ancient stories</div>
-                    <div class="option">Local food & street snacks</div>
-                    <div class="option">Modern life & convenience</div>
+                    <div class="option" data-score="xian:3, beijing:3">History, culture, ancient stories</div>
+                    <div class="option" data-score="chengdu:3, changsha:3">Local food & street snacks</div>
+                    <div class="option" data-score="shanghai:3, shenzhen:3">Modern life & convenience</div>
                 </div>
                 <div class="step" data-city="zhangjiajie">
                     <p class="font-semibold text-lg mb-4">8. You love views that are…</p>
-                    <div class="option">Breathtaking, magnificent, epic</div>
-                    <div class="option">Elegant, delicate, beautiful</div>
-                    <div class="option">Lively, colorful, energetic</div>
+                    <div class="option" data-score="zhangjiajie:3, huangshan:3">Breathtaking, magnificent, epic</div>
+                    <div class="option" data-score="guilin:3, hangzhou:3">Elegant, delicate, beautiful</div>
+                    <div class="option" data-score="chongqing:3, shanghai:3">Lively, colorful, energetic</div>
                 </div>
                 <div class="step" data-city="guilin">
                     <p class="font-semibold text-lg mb-4">9. You enjoy natural scenery like…</p>
-                    <div class="option">Green mountains & clear waters</div>
-                    <div class="option">Ocean & beach & sunset</div>
-                    <div class="option">Forest & waterfall & fresh air</div>
+                    <div class="option" data-score="guilin:3, jiuzhaigou:3">Green mountains & clear waters</div>
+                    <div class="option" data-score="sanya:3, xiamen:3">Ocean & beach & sunset</div>
+                    <div class="option" data-score="dali:3, lijiang:3">Forest & waterfall & fresh air</div>
                 </div>
                 <div class="step" data-city="changsha">
                     <p class="font-semibold text-lg mb-4">10. Your travel style is…</p>
-                    <div class="option">Fun, spicy food, nightlife, youth vibes</div>
-                    <div class="option">High-quality, comfortable, safe</div>
-                    <div class="option">Authentic local experience</div>
+                    <div class="option" data-score="changsha:3, chongqing:3">Fun, spicy food, nightlife, youth vibes</div>
+                    <div class="option" data-score="shanghai:3, beijing:3">High-quality, comfortable, safe</div>
+                    <div class="option" data-score="chengdu:3, guangzhou:3">Authentic local experience</div>
                 </div>
             </div>
             <button id="nextBtn" class="w-full py-4 bg-accent text-white rounded-full font-semibold mt-6">Next Question</button>
@@ -307,7 +301,7 @@
     <div class="modal-box text-center">
         <h2 class="text-xl font-bold mb-3">Complete Payment</h2>
         <p class="text-dark/60 mb-4">Scan to pay and get your full travel guide</p>
-        <img src="https://p6-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/537cd44e5d7445f3a2aefbfaf0c9d7c8.png" class="w-48 h-48 mx-auto rounded-xl mb-4">
+        <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/82f6422e4ae24c03950eb720555b7fb0.png" class="w-48 h-48 mx-auto rounded-xl mb-4">
         <button onclick="closePay()" class="px-6 py-2 border border-gray-300 rounded-full">Close</button>
     </div>
 </div>
@@ -323,7 +317,7 @@ const progressBar = document.getElementById('progressBar');
 let scores = {};
 
 const cityData = {
-  chengdu:{name:"Chengdu",img:"https://picsum.photos/id/1074/800/450",desc:"Famous for giant pandas, slow life, delicious food and cozy tea culture."},
+  chengdu:{name:"Chengdu",img:"https://picsum.photos/id/237/800/450",desc:"Famous for giant pandas, slow life, delicious food and cozy tea culture."},
   shanghai:{name:"Shanghai",img:"https://picsum.photos/id/1029/800/450",desc:"China's most international city with modern skyscrapers, shopping and convenience."},
   chongqing:{name:"Chongqing",img:"https://picsum.photos/id/1015/800/450",desc:"Magic mountain city with unique views, spicy food and vibrant nightlife."},
   dali:{name:"Dali",img:"https://picsum.photos/id/1039/800/450",desc:"Quiet, healing, lake and mountain views perfect for relaxation."},
@@ -332,7 +326,17 @@ const cityData = {
   xian:{name:"Xi’an",img:"https://picsum.photos/id/1059/800/450",desc:"Ancient capital, Terracotta Army, deep history and traditional culture."},
   zhangjiajie:{name:"Zhangjiajie",img:"https://picsum.photos/id/1018/800/450",desc:"Breathtaking mountain views like Avatar, pure nature wonder."},
   guilin:{name:"Guilin",img:"https://picsum.photos/id/1038/800/450",desc:"Green mountains and clear waters, the most beautiful landscape in China."},
-  changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/450",desc:"Spicy food, youthful vibes, street snacks and fun nightlife."}
+  changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/450",desc:"Spicy food, youthful vibes, street snacks and fun nightlife."},
+  beijing:{name:"Beijing",img:"https://picsum.photos/id/1067/800/450",desc:"Capital of China! Forbidden City, Great Wall, history and traditional culture core."},
+  guangzhou:{name:"Guangzhou",img:"https://picsum.photos/id/1065/800/450",desc:"Cantonese food, trading port, warm climate and lively local vibes."},
+  shenzhen:{name:"Shenzhen",img:"https://picsum.photos/id/1071/800/450",desc:"Tech hub, modern city, fast pace and innovative vibes."},
+  suzhou:{name:"Suzhou",img:"https://picsum.photos/id/1055/800/450",desc:"Classical gardens, water towns, gentle culture and elegant lifestyle."},
+  lijiang:{name:"Lijiang",img:"https://picsum.photos/id/1037/800/450",desc:"Old town, snow mountains, ethnic culture and peaceful vibes."},
+  qingdao:{name:"Qingdao",img:"https://picsum.photos/id/1069/800/450",desc:"Coastal city, beer, German architecture and fresh sea breeze."},
+  dalian:{name:"Dalian",img:"https://picsum.photos/id/1068/800/450",desc:"Northern coastal city, clean, fresh air and beautiful sea views."},
+  xiamen:{name:"Xiamen",img:"https://picsum.photos/id/1062/800/450",desc:"Southern coastal city, Gulangyu Island, seafood and relaxed vibes."},
+  wuhan:{name:"Wuhan",img:"https://picsum.photos/id/1057/800/450",desc:"Yangtze River city, hot dry noodles, lakes and energetic vibes."},
+  nanjing:{name:"Nanjing",img:"https://picsum.photos/id/1058/800/450",desc:"Ancient capital, Ming Tombs, Yangtze River and historical vibes."}
 };
 
 options.forEach(opt => {
@@ -346,6 +350,7 @@ options.forEach(opt => {
 function startQuiz(){
   document.getElementById('quizModal').style.display = 'flex';
   currentStep = 0;
+  scores = {};
   steps.forEach(s => s.classList.remove('active'));
   steps[0].classList.add('active');
   qProgress.innerText = 'Question 1 / 10';
@@ -363,8 +368,11 @@ nextBtn.addEventListener('click', () => {
   const active = steps[currentStep];
   const selected = active.querySelector('.option.active');
   if(!selected){ alert('Please select an answer'); return; }
-  const city = active.dataset.city;
-  scores[city] = (scores[city] || 0) + 1;
+  const scoreStr = selected.dataset.score;
+  scoreStr.split(', ').forEach(s => {
+    const [city, num] = s.split(':');
+    scores[city] = (scores[city] || 0) + parseInt(num);
+  });
   currentStep++;
   steps.forEach(s => s.classList.remove('active'));
   steps[currentStep].classList.add('active');
@@ -379,7 +387,13 @@ nextBtn.addEventListener('click', () => {
 
 resultBtn.addEventListener('click', () => {
   let topCity = 'chengdu';
-  for(let c in scores){ if(scores[c] > scores[topCity]) topCity = c; }
+  let maxScore = 0;
+  for(let c in scores){
+    if(scores[c] > maxScore){
+      maxScore = scores[c];
+      topCity = c;
+    }
+  }
   document.getElementById('resultCity').innerText = cityData[topCity].name;
   document.getElementById('resultImg').src = cityData[topCity].img;
   document.getElementById('resultDesc').innerText = cityData[topCity].desc;
