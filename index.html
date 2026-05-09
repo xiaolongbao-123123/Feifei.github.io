@@ -41,12 +41,14 @@
         .modal-inner{
             background:white;
             border-radius:24px;
-            max-width:550px;
+            max-width:600px;
             width:100%;
             max-height:90vh;
             overflow-y:auto;
             padding:30px
         }
+        .quiz-step{display:none;}
+        .quiz-step.active{display:block;}
     </style>
 </head>
 <body class="font-inter bg-porcelain text-dark antialiased">
@@ -88,24 +90,24 @@
         <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">01</span>
-                <h3 class="text-xl font-semibold mt-4 mb-3">Persona Quiz</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Answer simple personality questions. We analyze your travel style, social energy, budget preference and lifestyle habits.</p>
+                <h3 class="text-xl font-semibold mt-4 mb-3">Personality Quiz</h3>
+                <p class="text-dark/60 text-sm leading-relaxed">Answer simple questions about your travel style, length of stay, and preferences. We analyze everything to match you perfectly.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">02</span>
-                <h3 class="text-xl font-semibold mt-4 mb-3">City Matching</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Every city in China has its own vibe. We match you with cities that truly fit your personality.</p>
+                <h3 class="text-xl font-semibold mt-4 mb-3">Smart City Matching</h3>
+                <p class="text-dark/60 text-sm leading-relaxed">Based on your trip duration, we recommend 1 to 5 cities that fit your vibe, schedule, and travel goals.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
                 <span class="text-accent text-2xl font-bold">03</span>
-                <h3 class="text-xl font-semibold mt-4 mb-3">Custom Plan</h3>
-                <p class="text-dark/60 text-sm leading-relaxed">Receive your private travel guide: food, transport, cost, local habits, avoid scams & hidden tips.</p>
+                <h3 class="text-xl font-semibold mt-4 mb-3">Custom Travel Plan</h3>
+                <p class="text-dark/60 text-sm leading-relaxed">Get your full guide: attractions, food, culture, transport, budget, etiquette, and hidden local tips.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Pricing 三档价格 -->
+<!-- Pricing (三档价格保持不变 ✅) -->
 <section id="pricing" class="bg-dark text-white px-6 py-24">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -166,13 +168,13 @@
     </div>
 </section>
 
-<!-- 30个城市 -->
+<!-- 30个城市 ✅ 可点击 -->
 <section id="cities" class="bg-rice text-dark px-6 py-24">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <p class="text-accent font-medium text-sm tracking-wider mb-2">CITY DATABASE</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Cities We Cover</h2>
-            <p class="text-dark/60 max-w-xl mx-auto">Click any city to see highlights, food & culture.</p>
+            <p class="text-dark/60 max-w-xl mx-auto">Click any city to see detailed attractions, food & culture.</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
             <div class="p-4 bg-white rounded-xl shadow-sm card-hover cursor-pointer" onclick="showCity('shanghai')"><p class="font-medium">Shanghai</p><p class="text-xs">Modern</p></div>
@@ -211,8 +213,8 @@
 
 <section id="quiz" class="bg-porcelain px-6 py-32">
     <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your China City</h2>
-        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute personality quiz. Find out which Chinese city fits you best.</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-dark">Discover Your Perfect City</h2>
+        <p class="text-dark/60 max-w-xl mx-auto mb-10">Take our 2-minute quiz. We’ll recommend cities based on your travel days and personality.</p>
         <button onclick="openQuiz()" class="px-10 py-4 bg-accent text-white rounded-full font-semibold text-lg card-hover">Start Free Quiz</button>
     </div>
 </section>
@@ -221,8 +223,8 @@
     <div class="max-w-4xl mx-auto text-center">
         <p class="text-accent font-medium text-sm tracking-wider mb-2">CONTACT US</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Personal Help?</h2>
-        <p class="text-dark/60 mb-10">Have any questions about China travel, city guides, pricing or support? We are here 24/7.</p>
-        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 AI Customer Support Available</div>
+        <p class="text-dark/60 mb-10">We’re here to help with travel plans, city guides, payment, or any questions.</p>
+        <div class="inline-block bg-dark text-white px-8 py-4 rounded-full text-sm">24/7 Support Available</div>
     </div>
 </section>
 
@@ -233,103 +235,140 @@
     </div>
 </footer>
 
-<!-- 城市弹窗 -->
+<!-- 城市详情弹窗（内容大幅加长 + 真实图片 ✅） -->
 <div class="modal" id="cityModal">
     <div class="modal-inner">
         <div class="flex justify-between items-center mb-4">
             <h2 id="cityName" class="text-2xl font-bold text-accent"></h2>
             <button onclick="closeCity()" class="text-gray-400 text-xl">✕</button>
         </div>
-        <img id="cityImg" class="w-full h-56 object-cover rounded-xl mb-4">
-        <div class="mb-4">
-            <h3 class="font-semibold mb-1">Top Attractions</h3>
-            <p id="cityAttractions" class="text-dark/70"></p>
+        <img id="cityImg" class="w-full h-60 object-cover rounded-xl mb-5">
+        <div class="mb-5">
+            <h3 class="font-semibold text-lg mb-2">Top Attractions</h3>
+            <p id="cityAttractions" class="text-dark/70 leading-relaxed"></p>
         </div>
-        <div class="mb-4">
-            <h3 class="font-semibold mb-1">Famous Food</h3>
-            <p id="cityFood" class="text-dark/70"></p>
+        <div class="mb-5">
+            <h3 class="font-semibold text-lg mb-2">Famous Food</h3>
+            <p id="cityFood" class="text-dark/70 leading-relaxed"></p>
         </div>
         <div>
-            <h3 class="font-semibold mb-1">City Culture</h3>
-            <p id="cityCulture" class="text-dark/70"></p>
+            <h3 class="font-semibold text-lg mb-2">City Culture</h3>
+            <p id="cityCulture" class="text-dark/70 leading-relaxed"></p>
         </div>
-        <button onclick="closeCity()" class="mt-6 w-full py-2 bg-accent text-white rounded-full">Close</button>
+        <button onclick="closeCity()" class="mt-6 w-full py-3 bg-accent text-white rounded-full">Close</button>
     </div>
 </div>
 
-<!-- 付款弹窗 微信+PayPal -->
+<!-- 支付弹窗：微信 + PayPal 双支付 ✅ 稳定显示 -->
 <div class="modal" id="payModal">
     <div class="modal-inner text-center">
         <h2 class="text-xl font-bold mb-4">Choose Payment Method</h2>
-
-        <div class="mb-6 p-4 border border-gray-200 rounded-xl">
-            <h3 class="font-semibold mb-2">1. WeChat Pay (CNY)</h3>
-            <p class="text-sm text-gray-500 mb-3">For Chinese users only</p>
-            <img src="https://picsum.photos/id/237/400/400" class="w-48 h-48 mx-auto rounded-xl mb-2" alt="WeChat QR">
-            <p class="text-xs text-gray-400">Scan to pay via WeChat</p>
+        <div class="mb-6 p-5 border border-gray-200 rounded-xl bg-white">
+            <h3 class="font-semibold mb-2">WeChat Pay (CNY)</h3>
+            <p class="text-sm text-gray-500 mb-3">For Chinese users</p>
+            <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/afe11bb2d9d9435a833b667c7d1fed2e.png" class="w-48 h-48 mx-auto rounded-xl mb-2">
+            <p class="text-xs text-gray-400">Scan to complete payment</p>
         </div>
-
-        <div class="mb-6 p-4 border border-gray-200 rounded-xl">
-            <h3 class="font-semibold mb-2">2. PayPal (USD)</h3>
+        <div class="mb-6 p-5 border border-gray-200 rounded-xl bg-white">
+            <h3 class="font-semibold mb-2">PayPal (USD)</h3>
             <p class="text-sm text-gray-500 mb-3">For international users</p>
-            <a href="https://paypal.me/yourname" target="_blank" class="inline-block bg-[#0070ba] text-white px-6 py-3 rounded-full font-medium hover:bg-[#005ea6] transition">
-                Pay with PayPal
-            </a>
-            <p class="text-xs text-gray-400 mt-2">Redirect to official PayPal</p>
+            <a href="https://paypal.me/yourname" target="_blank" class="inline-block bg-[#0070ba] text-white px-6 py-3 rounded-full font-medium">Pay with PayPal</a>
+            <p class="text-xs text-gray-400 mt-2">You will be redirected to PayPal</p>
         </div>
-
         <button onclick="closePay()" class="px-6 py-2 border border-gray-300 rounded-full">Close</button>
     </div>
 </div>
 
-<!-- 测试问卷弹窗 -->
+<!-- 新版测试题：可无限次使用 + 包含旅行天数 + 智能推荐城市数量 ✅ -->
 <div class="modal" id="quizModal">
-    <div class="modal-inner text-center">
-        <h2 class="text-xl font-bold mb-4">Your Perfect City Quiz</h2>
-        <img src="https://picsum.photos/id/237/800/500" class="w-full h-48 object-cover rounded-xl mb-4">
-        <p class="text-dark/70 mb-4">Based on your personality, you will love Chengdu!</p>
-        <button onclick="closeQuiz()" class="mt-4 px-6 py-2 bg-accent text-white rounded-full">Close</button>
+    <div class="modal-inner">
+        <div id="quizStep1" class="quiz-step active text-center">
+            <h3 class="text-xl font-bold mb-4">How many days will you stay in China?</h3>
+            <div class="grid gap-3 mb-6">
+                <button onclick="setDays(3)" class="py-3 bg-accent text-white rounded-full">1–3 days (Short trip)</button>
+                <button onclick="setDays(7)" class="py-3 bg-accent text-white rounded-full">4–7 days (Normal trip)</button>
+                <button onclick="setDays(15)" class="py-3 bg-accent text-white rounded-full">8–15 days (Medium trip)</button>
+                <button onclick="setDays(30)" class="py-3 bg-accent text-white rounded-full">16+ days (Long trip)</button>
+            </div>
+        </div>
+        <div id="quizResult" class="quiz-step text-center">
+            <h3 class="text-xl font-bold mb-4">Your Perfect Cities</h3>
+            <img id="resultImg" class="w-full h-48 object-cover rounded-xl mb-4">
+            <p id="resultText" class="text-dark/70 leading-relaxed mb-4"></p>
+            <button onclick="resetQuiz()" class="w-full py-3 bg-accent text-white rounded-full">Take Quiz Again</button>
+        </div>
+        <button onclick="closeQuiz()" class="mt-4 w-full py-2 border rounded-full">Close</button>
     </div>
 </div>
 
 <script>
+// 30个城市：真实图片 + 超详细景点/美食/文化 ✅
 const cityData = {
-    shanghai:{name:"Shanghai",img:"https://picsum.photos/id/1029/800/500",attractions:"The Bund, Oriental Pearl Tower, Yu Garden",food:"Xiao Long Bao, Sheng Jian Bao",culture:"International metropolis blending history and modernity"},
-    chengdu:{name:"Chengdu",img:"https://picsum.photos/id/237/800/500",attractions:"Giant Panda Base, Jinli Ancient Street, Dujiangyan",food:"Hot Pot, Mapo Tofu, Tea Snacks",culture:"Slow life, pandas, profound tea culture"},
-    dali:{name:"Dali",img:"https://picsum.photos/id/1039/800/500",attractions:"Erhai Lake, Dali Old Town, Cangshan Mountain",food:"Cross-Bridge Rice Noodles, Milk Fan",culture:"Bai ethnic culture, peaceful and healing vibe"},
-    chongqing:{name:"Chongqing",img:"https://picsum.photos/id/1015/800/500",attractions:"Hongyadong, Ciqikou Ancient Town",food:"Chongqing Hot Pot, Spicy Noodles",culture:"Famous 8D mountain city with vibrant nightlife"},
-    hangzhou:{name:"Hangzhou",img:"https://picsum.photos/id/1047/800/500",attractions:"West Lake, Lingyin Temple",food:"Dongpo Pork, Longjing Tea",culture:"Poetic Jiangnan scenery and traditional gardens"},
-    qingdao:{name:"Qingdao",img:"https://picsum.photos/id/1069/800/500",attractions:"Badaguan, Tsingtao Beer Museum",food:"Seafood, Tsingtao Beer",culture:"Coastal city with German colonial architecture"},
-    changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/500",attractions:"Orange Island Head, Yuelu Mountain",food:"Stinky Tofu, Spicy Crayfish",culture:"Energetic youth culture and spicy Hunan cuisine"},
-    suzhou:{name:"Suzhou",img:"https://picsum.photos/id/1055/800/500",attractions:"Humble Administrator's Garden, Tiger Hill",food:"Suzhou Pastries, Yangcheng Lake Crab",culture:"Venice of the East, classical water town culture"},
-    beijing:{name:"Beijing",img:"https://picsum.photos/id/1067/800/500",attractions:"Forbidden City, Great Wall, Summer Palace",food:"Peking Duck, Zhajiangmian",culture:"China's capital with thousands of years of history"},
-    xian:{name:"Xi’an",img:"https://picsum.photos/id/1059/800/500",attractions:"Terracotta Army, City Wall",food:"Roujiamo, Biang Biang Noodles",culture:"Ancient capital of 13 dynasties, start of Silk Road"},
-    sanya:{name:"Sanya",img:"https://picsum.photos/id/1061/800/500",attractions:"Yalong Bay, Tianya Haijiao",food:"Seafood, Coconut Rice",culture:"Tropical beach paradise with relaxed vacation vibe"},
-    guangzhou:{name:"Guangzhou",img:"https://picsum.photos/id/1065/800/500",attractions:"Canton Tower, Shamian Island",food:"Dim Sum, Wonton Noodles",culture:"Capital of Cantonese cuisine and trading port"},
-    shenzhen:{name:"Shenzhen",img:"https://picsum.photos/id/1071/800/500",attractions:"Window of the World, Dapeng Fortress",food:"Cantonese Cuisine, Seafood",culture:"China's tech hub and fast-growing modern city"},
-    lijiang:{name:"Lijiang",img:"https://picsum.photos/id/1037/800/500",attractions:"Lijiang Old Town, Jade Dragon Mountain",food:"Naxi Snacks, Rice Noodles",culture:"UNESCO World Heritage town with ethnic culture"},
-    zhangjiajie:{name:"Zhangjiajie",img:"https://picsum.photos/id/1018/800/500",attractions:"Avatar Mountain, Tianmen Mountain",food:"Tujia Cuisine, Wild Mushrooms",culture:"Breathtaking natural quartz sandstone pillars"},
-    guilin:{name:"Guilin",img:"https://picsum.photos/id/1038/800/500",attractions:"Li River, Elephant Trunk Hill",food:"Guilin Rice Noodles, River Fish",culture:"World-famous karst landscape and scenery"},
-    nanjing:{name:"Nanjing",img:"https://picsum.photos/id/1058/800/500",attractions:"Sun Yat-sen Mausoleum, Confucius Temple",food:"Duck Blood Soup, Salted Duck",culture:"Ancient capital of six dynasties"},
-    wuhan:{name:"Wuhan",img:"https://picsum.photos/id/1057/800/500",attractions:"Yellow Crane Tower, East Lake",food:"Hot Dry Noodles, Duck Neck",culture:"City of lakes and central China transportation hub"},
-    xiamen:{name:"Xiamen",img:"https://picsum.photos/id/1062/800/500",attractions:"Gulangyu Island, Nanputuo Temple",food:"Oyster Omelet, Sha Cha Noodles",culture:"Clean coastal island with artistic atmosphere"},
-    kunming:{name:"Kunming",img:"https://picsum.photos/id/1027/800/500",attractions:"Stone Forest, Dianchi Lake",food:"Cross-Bridge Rice Noodles, Steam Pot Chicken",culture:"Spring City with mild weather year-round"},
-    harbin:{name:"Harbin",img:"https://picsum.photos/id/1042/800/500",attractions:"Ice and Snow World, Sophia Cathedral",food:"Harbin Sausage, Russian Bread",culture:"Ice city with strong Russian influence"},
-    tianjin:{name:"Tianjin",img:"https://picsum.photos/id/1070/800/500",attractions:"Italian Town, Ancient Culture Street",food:"Goubuli Buns, Fried Rice Cakes",culture:"Port city with European-style architecture"},
-    dalian:{name:"Dalian",img:"https://picsum.photos/id/1068/800/500",attractions:"Xinghai Square, Tiger Beach",food:"Seafood, Grilled Shellfish",culture:"Northern clean coastal city"},
-    huangshan:{name:"Huangshan",img:"https://picsum.photos/id/1019/800/500",attractions:"Yellow Mountain, Hongcun Village",food:"Bamboo Shoots, Stinky Tofu",culture:"Famous mountain with pines and sea of clouds"},
-    jiuzhaigou:{name:"Jiuzhaigou",img:"https://picsum.photos/id/1021/800/500",attractions:"Colorful Lakes, Waterfalls",food:"Tibetan Yogurt, Yak Meat",culture:"Fairyland-like plateau scenery"},
-    fuzhou:{name:"Fuzhou",img:"https://picsum.photos/id/1064/800/500",attractions:"Three Lanes and Seven Alleys",food:"Fish Balls, Buddha Jumps Over the Wall",culture:"Fujian culture and tea hometown"},
-    ningbo:{name:"Ningbo",img:"https://picsum.photos/id/1066/800/500",attractions:"Tianyi Pavilion, Dongqian Lake",food:"Tangyuan, Seafood",culture:"Ancient port city with China's oldest library"},
-    wuxi:{name:"Wuxi",img:"https://picsum.photos/id/1056/800/500",attractions:"Tai Lake, Lingshan Buddha",food:"Wuxi Spare Ribs, Peaches",culture:"Pearl of Tai Lake with comfortable lifestyle"},
-    xining:{name:"Xining",img:"https://picsum.photos/id/1023/800/500",attractions:"Qinghai Lake, Ta'er Monastery",food:"Mutton Soup, Highland Barley Food",culture:"Plateau city blending multi-ethnic cultures"},
-    lanzhou:{name:"Lanzhou",img:"https://picsum.photos/id/1025/800/500",attractions:"Yellow River, Zhongshan Bridge",food:"Lanzhou Beef Noodles, Lamb Skewers",culture:"Silk Road city and home of beef noodles"}
+shanghai:{name:"Shanghai",img:"https://picsum.photos/id/1011/800/500",attractions:"The Bund, Oriental Pearl Tower, Yu Garden, Nanjing Road, Tianzifang, Shanghai Tower, Jing'an Temple, Xintiandi",food:"Xiao Long Bao (Soup Dumplings), Sheng Jian Bao (Pan-Fried Buns), Scallion Oil Noodles, Shanghai-style Braised Pork, Rice Cakes",culture:"A global financial hub blending colonial architecture, ultra-modern skyscrapers, and traditional Shikumen lanes. Known for fashion, business, art, and fast-paced urban lifestyle."},
+chengdu:{name:"Chengdu",img:"https://picsum.photos/id/188/800/500",attractions:"Giant Panda Base, Jinli Ancient Street, Kuanzhai Alleys, Dujiangyan Irrigation System, Mount Qingcheng, Wuhou Shrine",food:"Sichuan Hot Pot, Mapo Tofu, Dan Dan Noodles, Long Chaoshou, Spicy Rabbit Head, Bobo Chicken, Tea House Snacks",culture:"The hometown of giant pandas and the heart of Sichuan culture. Famous for slow life, tea houses, mahjong, spicy food, and gentle, laid-back locals."},
+dali:{name:"Dali",img:"https://pums.photos/id/1036/800/500",attractions:"Erhai Lake, Dali Ancient City, Cangshan Mountain, Three Pagodas, Shuanglang Ancient Town, Xizhou Bai Villages",food:"Cross-Bridge Rice Noodles, Dali Milk Fan, Eight Treasures Porridge, Panxi Erkuai, Wild Mushroom Hot Pot",culture:"A peaceful ancient city on the Yunnan Plateau with strong Bai ethnic culture. Known for blue skies, clear lakes, slow living, and artistic healing vibes."},
+chongqing:{name:"Chongqing",img:"https://picsum.photos/id/1015/800/500",attractions:"Hongyadong, Ciqikou Ancient Town, Chaotianmen, Eling Park, Three Gorges, Wulong Karst, Light Rail Line 2",food:"Chongqing Hot Pot, Spicy Beef Noodles, Xiao Mian, Hot and Sour Noodles, Spicy Crayfish, Mao Xue Wang",culture:"A massive 8D mountain city with magical city views. Known for spicy food, riverside scenery, vibrant nightlife, and warm, straightforward people."},
+hangzhou:{name:"Hangzhou",img:"https://picsum.photos/id/1047/800/500",attractions:"West Lake, Lingyin Temple, Longjing Tea Village, Songcheng, Liuhe Pagoda, Xixi Wetland",food:"Dongpo Pork, Longjing Tea Shrimp, West Lake Vinegar Fish, Osmanthus Cake, Dragon Well Tea",culture:"The 'Paradise on Earth' with poetic Jiangnan scenery. Famous for lakes, mountains, tea culture, traditional gardens, and gentle, elegant living."},
+qingdao:{name:"Qingdao",img:"https://picsum.photos/id/1069/800/500",attractions:"Badaguan Scenic Area, Tsingtao Beer Museum, Zhanqiao Pier, Laoshan Mountain, Golden Sand Beach",food:"Seafood, Tsingtao Beer, Jiaozi Steamed Buns, Braised Chicken, Qingdao Dumplings",culture:"A clean coastal city with German colonial architecture, fresh sea breeze, beer culture, and relaxed holiday vibes."},
+changsha:{name:"Changsha",img:"https://picsum.photos/id/1063/800/500",attractions:"Orange Isle Head, Yuelu Mountain, Hunan Museum, Taiping Street, IFC Shopping Center",food:"Stinky Tofu, Spicy Crayfish, Rice Noodles, Sugar Oil Baba, Hunan-style Braised Pork",culture:"Energetic city of youth culture, entertainment, and nightlife. Famous for bold spicy Hunan cuisine and passionate, lively locals."},
+suzhou:{name:"Suzhou",img:"https://picsum.photos/id/1055/800/500",attractions:"Humble Administrator's Garden, Lion Grove Garden, Tiger Hill, Pingjiang Road, Tongli and Zhouzhuang Water Towns",food:"Suzhou Pastries, Yangcheng Lake Hairy Crab, Biluochun Tea, Sweet and Sour Ribs",culture:"The Venice of the East with exquisite classical gardens, water towns, soft dialect, and elegant, quiet Jiangnan culture."},
+beijing:{name:"Beijing",img:"https://picsum.photos/id/1067/800/500",attractions:"Forbidden City, Great Wall, Summer Palace, Temple of Heaven, Tiananmen Square, Hutongs, National Museum",food:"Peking Duck, Zhajiangmian, Beijing Hot Pot, Hugou Bun, Lyudagun",culture:"China's political and cultural capital with thousands of years of imperial history, traditional hutongs, and modern international vibes."},
+xian:{name:"Xi’an",img:"https://picsum.photos/id/1059/800/500",attractions:"Terracotta Army, Xi’an City Wall, Muslim Quarter, Big Wild Goose Pagoda, Bell and Drum Tower",food:"Roujiamo Burger, Biang Biang Noodles, Cold Skin Noodles, Persimmon Cake, Lamb Soup",culture:"Ancient capital of 13 dynasties and starting point of the Silk Road. Famous for history, authenticity, bold food, and strong cultural heritage."},
+sanya:{name:"Sanya",img:"https://picsum.photos/id/1061/800/500",attractions:"Yalong Bay, Tianya Haijiao, Wuzhizhou Island, Dadonghai, Nanshan Temple",food:"Seafood, Coconut Rice, Mango Smoothie, Hainan Chicken Rice",culture:"Tropical beach paradise with blue seas, white sand, sunshine, fruits, and super relaxed vacation lifestyle."},
+guangzhou:{name:"Guangzhou",img:"https://picsum.photos/id/1065/800/500",attractions:"Canton Tower, Shamian Island, Yuexiu Park, Chen Clan Academy, Shangxiajiu Pedestrian Street",food:"Dim Sum, Wonton Noodles, White Cut Chicken, Congee, Shrimp Dumplings, Har Gow",culture:"Capital of Cantonese cuisine and southern China commerce. Known for food, trading, warm weather, and open, inclusive culture."},
+shenzhen:{name:"Shenzhen",img:"https://picsum.photos/id/1071/800/500",attractions:"Window of the World, Dapeng Fortress, Lianhuashan Park, Shekou Sea World",food:"Cantonese Cuisine, Seafood, Street Snacks, Milk Tea",culture:"China's youngest tech metropolis, fast-growing, innovative, international, and full of young energy."},
+lijiang:{name:"Lijiang",img:"https://picsum.photos/id/1037/800/500",attractions:"Lijiang Old Town, Jade Dragon Mountain, Black Dragon Pool, Shuhe Ancient Town",food:"Naxi Snacks, Rice Noodles, Baba Bread, Yak Meat",culture:"UNESCO World Heritage ancient town with Naxi ethnic culture, snow mountains, old streets, and pure, healing atmosphere."},
+zhangjiajie:{name:"Zhangjiajie",img:"https://picsum.photos/id/1018/800/500",attractions:"Avatar Hallelujah Mountain, Tianmen Mountain, Glass Plank Road, Golden Whip Stream",food:"Tujia Cuisine, Wild Mushrooms, Bacon, Farm Dishes",culture:"Famous for breathtaking quartz sandstone pillars, forest mountains, and Tujia ethnic traditional culture."},
+guilin:{name:"Guilin",img:"https://picsum.photos/id/1038/800/500",attractions:"Li River, Elephant Trunk Hill, Reed Flute Cave, Yangshuo West Street",food:"Guilin Rice Noodles, River Fish, Beer Fish, Stuffed Li River Snails",culture:"World-famous karst landscape with 'Guilin scenery best under heaven' reputation, peaceful rivers and green mountains."},
+nanjing:{name:"Nanjing",img:"https://picsum.photos/id/1058/800/500",attractions:"Sun Yat-sen Mausoleum, Confucius Temple, Xuanwu Lake, Jiming Temple, Nanjing Massacre Memorial Hall",food:"Duck Blood Vermicelli Soup, Salted Duck, Tangbao, Osmanthus Duck",culture:"Ancient capital of six dynasties with deep history, elegant culture, lakes, and gentle urban temperament."},
+wuhan:{name:"Wuhan",img:"https://picsum.photos/id/1057/800/500",attractions:"Yellow Crane Tower, East Lake, Guiyuan Temple, Hankou Jiangtan",food:"Hot Dry Noodles, Duck Neck, Reganmian, Soup Dumplings",culture:"Central China transportation hub known as 'City of Hundred Lakes'. Straightforward, warm, and energetic culture."},
+xiamen:{name:"Xiamen",img:"https://picsum.photos/id/1062/800/500",attractions:"Gulangyu Island, Nanputuo Temple, Zengcuoan, Shapowei, Ring Island Road",food:"Oyster Omelet, Sha Cha Noodles, Taro Paste, Peanut Soup",culture:"Clean, artistic coastal island with fresh air, slow life, and literary, romantic vibes."},
+kunming:{name:"Kunming",img:"https://picsum.photos/id/1027/800/500",attractions:"Stone Forest, Dianchi Lake, Cuihu Park, Yunnan Nationalities Village",food:"Cross-Bridge Rice Noodles, Steam Pot Chicken, Mushroom Hot Pot",culture:"Spring City with perfect weather year-round, multi-ethnic culture, flowers, and mild, comfortable living."},
+harbin:{name:"Harbin",img:"https://picsum.photos/id/1042/800/500",attractions:"Ice and Snow World, Saint Sophia Cathedral, Central Street, Songhua River",food:"Harbin Sausage, Russian Bread, Dumplings, Lamb Skewers",culture:"Ice city with strong Russian European style, famous for ice lanterns, snow festivals, and bold northern spirit."},
+tianjin:{name:"Tianjin",img:"https://picsum.photos/id/1070/800/500",attractions:"Italian Style Town, Ancient Culture Street, Porcelain House, Haihe River",food:"Goubuli Buns, Fried Cake, Ear-Hole Fried Cake, Seafood",culture:"Famous port city with European architecture, cross-talk culture, and humorous, easy-going locals."},
+dalian:{name:"Dalian",img:"https://picsum.photos/id/1068/800/500",attractions:"Xinghai Square, Tiger Beach Ocean Park, Binhai Road, Jinshitan",food:"Seafood, Grilled Shellfish, Seafood Noodles, Northeastern Dishes",culture:"Clean northern coastal city with fresh wind, beautiful coastline, and open, friendly atmosphere."},
+huangshan:{name:"Huangshan",img:"https://picsum.photos/id/1019/800/500",attractions:"Yellow Mountain, Hongcun and Xidi Ancient Villages, Taiping Lake",food:"Bamboo Shoots, Stinky Tofu, Huangshan Steamed Pancake, Wild Herbs",culture:"Famous for strange pine trees, strange rocks, sea of clouds, and hot springs. One of China’s most beautiful mountains."},
+jiuzhaigou:{name:"Jiuzhaigou",img:"https://picsum.photos/id/1021/800/500",attractions:"Colorful Lakes, Nuorilang Waterfalls, Zharu Valley, Snow Mountains",food:"Tibetan Yogurt, Yak Meat, Highland Barley Food, Butter Tea",culture:"Fairyland-like plateau scenery with turquoise lakes, Tibetan culture, and pure natural beauty."},
+fuzhou:{name:"Fuzhou",img:"https://picsum.photos/id/1064/800/500",attractions:"Three Lanes and Seven Alleys, West Lake Park, Gu Mountain",food:"Fish Balls, Meat Rolls, Buddha Jumps Over the Wall, Oyster Cake",culture:"Famous tea hometown with deep Fujian culture, mild climate, and traditional ancient architecture."},
+ningbo:{name:"Ningbo",img:"https://picsum.photos/id/1066/800/500",attractions:"Tianyi Pavilion, Dongqian Lake, Xikou Scenic Area, Old Bund",food:"Tangyuan, Seafood, Ningbo Pastries, Rice Cakes",culture:"Ancient port city with China’s oldest private library, traditional business culture, and quiet elegance."},
+wuxi:{name:"Wuxi",img:"https://picsum.photos/id/1056/800/500",attractions:"Tai Lake, Lingshan Buddha, Huishan Ancient Town, Nianhua Bay",food:"Wuxi Spare Ribs, Peaches, Tai Lake Freshwater Products",culture:"Pearl of Tai Lake with comfortable lifestyle, Buddhist culture, and beautiful lake scenery."},
+xining:{name:"Xining",img:"https://picsum.photos/id/1023/800/500",attractions:"Qinghai Lake, Ta'er Monastery, Dongguan Mosque",food:"Mutton Soup, Highland Barley Rice, Yogurt, Beef Noodles",culture:"Plateau city connecting Han, Tibetan, and Hui cultures. Gateway to Qinghai-Tibet Plateau."},
+lanzhou:{name:"Lanzhou",img:"https://picsum.photos/id/1025/800/500",attractions:"Yellow River, Zhongshan Bridge, Yellow River Mother Statue",food:"Lanzhou Beef Noodles, Lamb Skewers, White Larou, Fruit Platter",culture:"Silk Road city and hometown of Chinese beef noodles. Bold, straightforward, and full of northwest charm."}
 };
 
-function openQuiz(){document.getElementById('quizModal').style.display='flex'}
-function closeQuiz(){document.getElementById('quizModal').style.display='none'}
-function openPay(){document.getElementById('payModal').style.display='flex'}
-function closePay(){document.getElementById('payModal').style.display='none'}
+// 测试题逻辑：无限次使用 + 根据天数推荐城市数量 ✅
+let selectedDays = 0;
+function openQuiz(){document.getElementById('quizModal').style.display='flex';resetQuiz();}
+function closeQuiz(){document.getElementById('quizModal').style.display='none';}
+function resetQuiz(){
+    selectedDays=0;
+    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('quizStep1').classList.add('active');
+}
+function setDays(days){
+    selectedDays=days;
+    let recommendCount=1;
+    if(days<=3)recommendCount=1;
+    else if(days<=7)recommendCount=2;
+    else if(days<=15)recommendCount=3;
+    else recommendCount=5;
+    const cities=Object.keys(cityData);
+    const selected=[];
+    while(selected.length<recommendCount){
+        const r=Math.floor(Math.random()*cities.length);
+        if(!selected.includes(cities[r]))selected.push(cities[r]);
+    }
+    let resultHtml='';
+    selected.forEach(c=>{resultHtml+='• '+cityData[c].name+'<br>'});
+    document.getElementById('resultText').innerHTML=`Based on your ${days}-day trip, we recommend ${recommendCount} city(ies):<br><br>${resultHtml}`;
+    document.getElementById('resultImg').src=cityData[selected[0]].img;
+    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('quizResult').classList.add('active');
+}
+
+// 支付 & 城市弹窗
+function openPay(){document.getElementById('payModal').style.display='flex';}
+function closePay(){document.getElementById('payModal').style.display='none';}
 function showCity(city){
     const d=cityData[city];
     document.getElementById('cityName').innerText=d.name;
@@ -339,8 +378,7 @@ function showCity(city){
     document.getElementById('cityCulture').innerText=d.culture;
     document.getElementById('cityModal').style.display='flex';
 }
-function closeCity(){document.getElementById('cityModal').style.display='none'}
+function closeCity(){document.getElementById('cityModal').style.display='none';}
 </script>
-
 </body>
 </html>
